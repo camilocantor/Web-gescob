@@ -50,11 +50,13 @@ namespace WebNif
                 Label7.Text = dt1.Rows[0][6].ToString(); 
 
                 Conexion cn = new Conexion();
-                string sql = "select idfactura, contador, fechagestion, seguimiento, estado, adjunto, idusuario from gc_gestiones where idfactura=" + idFactura + " order by fechagestion";
+                string sql = "select idfactura, fechagestion, seguimiento, estado, adjunto, idusuario from gc_gestiones where idfactura=" + idFactura + " order by fechagestion";
                 dt = (DataTable)cn.Query(sql, Conexion.TipoDato.Table);
                 GridView1.DataSource = dt;
                 GridView1.DataBind();
             }
+
+            Page.MaintainScrollPositionOnPostBack = true;
         }
 
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)

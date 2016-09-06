@@ -17,7 +17,7 @@ namespace WebNif
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Page.MaintainScrollPositionOnPostBack = true;
         }
 
         protected void enviar_correo(object sender, EventArgs e)

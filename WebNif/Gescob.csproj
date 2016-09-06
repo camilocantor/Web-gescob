@@ -112,6 +112,7 @@
     <Content Include="cuentasxcobrar.aspx" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="gestiones.aspx" />
+    <Content Include="historial.aspx" />
     <Content Include="historial_gestiones.aspx" />
     <Content Include="historial_pagos.aspx" />
     <Content Include="Icons\019225-green-jelly-icon-symbols-shapes-check-mark.png" />
@@ -172,6 +173,7 @@
     <Content Include="js\main.js" />
     <Content Include="js\modernizr-latest.js" />
     <Content Include="js\owl.carousel.min.js" />
+    <Content Include="nuevagestion.aspx" />
     <Content Include="reportes.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -237,6 +239,13 @@
     <Compile Include="gestiones.aspx.designer.cs">
       <DependentUpon>gestiones.aspx</DependentUpon>
     </Compile>
+    <Compile Include="historial.aspx.cs">
+      <DependentUpon>historial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="historial.aspx.designer.cs">
+      <DependentUpon>historial.aspx</DependentUpon>
+    </Compile>
     <Compile Include="historial_gestiones.aspx.cs">
       <DependentUpon>historial_gestiones.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -261,6 +270,13 @@
     </Compile>
     <Compile Include="inicio.aspx.designer.cs">
       <DependentUpon>inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="nuevagestion.aspx.cs">
+      <DependentUpon>nuevagestion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="nuevagestion.aspx.designer.cs">
+      <DependentUpon>nuevagestion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="reportes.aspx.cs">

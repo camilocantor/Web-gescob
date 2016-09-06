@@ -22,79 +22,82 @@ namespace WebNif
                 // tareas pendientes
                 llenar_grilla();
             }
-        }
+
+       }
 
         private DataTable datos;
 
         private void llenar_grilla()
         {
             Conexion cn = new Conexion();
-            string Sql = "select IDFACTURA, CONTADOR, FECHAGESTION, SEGUIMIENTO, ESTADO, ADJUNTO, IDUSUARIO from gc_gestiones order by idfactura ";
+            string Sql = "select IDFACTURA, FECHAGESTION, SEGUIMIENTO, ESTADO, ADJUNTO, IDUSUARIO from gc_gestiones order by idfactura ";
             datos = (DataTable)cn.Query(Sql, Conexion.TipoDato.Table);
             GridView4.DataSource = datos;
             GridView4.DataBind();
         }
 
-        protected void GridView4_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
-        {
-            GridView4.EditIndex = -1;
-            llenar_grilla();
+        #region editar
 
-            Page.MaintainScrollPositionOnPostBack = true;
-        }
+        //protected void GridView4_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        //{
+        //    GridView4.EditIndex = -1;
+        //    llenar_grilla();
 
-        protected void GridView4_RowEditing(object sender, GridViewEditEventArgs e)
-        {
-            GridView4.EditIndex = e.NewEditIndex;
-            llenar_grilla();
+        //    Page.MaintainScrollPositionOnPostBack = true;
+        //}
 
-            Page.MaintainScrollPositionOnPostBack = true;
-        }
+        //protected void GridView4_RowEditing(object sender, GridViewEditEventArgs e)
+        //{
+        //    GridView4.EditIndex = e.NewEditIndex;
+        //    llenar_grilla();
 
-        // ACTUALIZAR
-        protected void GridView4_RowUpdating(object sender, GridViewUpdateEventArgs e)
-        {
+        //    Page.MaintainScrollPositionOnPostBack = true;
+        //}
 
-            //IDFACTURA, CONTADOR, FECHAGESTION, SEGUIMIENTO, ESTADO, ADJUNTO, IDUSUARIO from gc_gestiones
+        //// ACTUALIZAR
+        //protected void GridView4_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        //{
 
-            GridViewRow fila = GridView4.Rows[e.RowIndex];
+        //    //IDFACTURA, CONTADOR, FECHAGESTION, SEGUIMIENTO, ESTADO, ADJUNTO, IDUSUARIO from gc_gestiones
 
-            Label Label_IDUSUARIO = fila.FindControl("IDUSUARIO") as Label;
-            Label Label_IDFACTURA = fila.FindControl("IDFACTURA") as Label;
-            Label Label_CONTADOR = fila.FindControl("CONTADOR") as Label;
-            string s_IDUSUARIO = Label_IDUSUARIO.Text;
-            string s_IDFACTURA = Label_IDFACTURA.Text;
-            string s_CONTADOR = Label_CONTADOR.Text;
+        //    GridViewRow fila = GridView4.Rows[e.RowIndex];
 
-            TextBox t_FECHAGESTION = fila.FindControl("FECHAGESTION") as TextBox;
-            TextBox t_SEGUIMIENTO = fila.FindControl("SEGUIMIENTO") as TextBox;
-            TextBox t_ESTADO = fila.FindControl("ESTADO") as TextBox;
-            TextBox t_ADJUNTO = fila.FindControl("ADJUNTO") as TextBox;
-            string s_FECHAGESTION = t_FECHAGESTION.Text;
-            string s_SEGUIMIENTO = t_SEGUIMIENTO.Text;
-            string s_ESTADO = t_ESTADO.Text;
-            string s_ADJUNTO = t_ADJUNTO.Text;
+        //    Label Label_IDUSUARIO = fila.FindControl("IDUSUARIO") as Label;
+        //    Label Label_IDFACTURA = fila.FindControl("IDFACTURA") as Label;
+        //    string s_IDUSUARIO = Label_IDUSUARIO.Text;
+        //    string s_IDFACTURA = Label_IDFACTURA.Text;
 
-            if (s_FECHAGESTION == "")
-                s_FECHAGESTION = "null";
-            if (s_SEGUIMIENTO == "")
-                s_SEGUIMIENTO = "null";
-            if (s_ESTADO == "")
-                s_ESTADO = "null";
-            if (s_ADJUNTO == "")
-                s_ADJUNTO = "null";
+        //    TextBox t_FECHAGESTION = fila.FindControl("FECHAGESTION") as TextBox;
+        //    TextBox t_SEGUIMIENTO = fila.FindControl("SEGUIMIENTO") as TextBox;
+        //    TextBox t_ESTADO = fila.FindControl("ESTADO") as TextBox;
+        //    TextBox t_ADJUNTO = fila.FindControl("ADJUNTO") as TextBox;
+        //    string s_FECHAGESTION = t_FECHAGESTION.Text;
+        //    string s_SEGUIMIENTO = t_SEGUIMIENTO.Text;
+        //    string s_ESTADO = t_ESTADO.Text;
+        //    string s_ADJUNTO = t_ADJUNTO.Text;
+
+        //    if (s_FECHAGESTION == "")
+        //        s_FECHAGESTION = "null";
+        //    if (s_SEGUIMIENTO == "")
+        //        s_SEGUIMIENTO = "null";
+        //    if (s_ESTADO == "")
+        //        s_ESTADO = "null";
+        //    if (s_ADJUNTO == "")
+        //        s_ADJUNTO = "null";
 
 
-            Conexion cn = new Conexion();
-            string sql = "update gc_gestiones set FECHAGESTION=" + s_FECHAGESTION + ", SEGUIMIENTO=" + s_SEGUIMIENTO + ", ESTADO=" + s_ESTADO + ", ADJUNTO=" + s_ADJUNTO;
-            cn.Query(sql);
+        //    Conexion cn = new Conexion();
+        //    string sql = "update gc_gestiones set FECHAGESTION=" + s_FECHAGESTION + ", SEGUIMIENTO=" + s_SEGUIMIENTO + ", ESTADO=" + s_ESTADO + ", ADJUNTO=" + s_ADJUNTO;
+        //    cn.Query(sql);
 
-            GridView4.EditIndex = -1;
+        //    GridView4.EditIndex = -1;
 
-            llenar_grilla();
+        //    llenar_grilla();
 
-            Page.MaintainScrollPositionOnPostBack = true;
-        }
+        //    Page.MaintainScrollPositionOnPostBack = true;
+        //}
+
+        #endregion
 
 
     }

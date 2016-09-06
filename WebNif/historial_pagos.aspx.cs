@@ -55,6 +55,8 @@ namespace WebNif
                 GridView1.DataSource = dt;
                 GridView1.DataBind();
             }
+
+            Page.MaintainScrollPositionOnPostBack = true;
         }
 
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)

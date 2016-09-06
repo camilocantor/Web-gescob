@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="historial_gestiones.aspx.cs" Inherits="WebNif.historial_gestiones" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="historial.aspx.cs" Inherits="WebNif.historial" %>
 
 <%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
@@ -41,48 +41,31 @@
             <div class="features section-padding">
                 <div class="container">
                     <div class="header">
-                        <h1 style="color: #660066; text-align: center;"><strong>F</strong>actura: 
-                            <asp:Label ID="Label1" runat="server"></asp:Label>
-                        </h1>
-                        <br />
-                        <h4 style="text-align: center;">
-                            <span style="color: #660066; text-align: center;">Cliente: 
-                    <asp:Label ID="Label2" runat="server"></asp:Label>
-                            </span>
-                            <br />
-                            <span style="color: #660066; text-align: center;">Fecha de factura: 
-                    <asp:Label ID="Label3" runat="server"></asp:Label>
-                            </span>
-                            <br />
-                            <span style="color: #660066; text-align: center;">Fecha de vencimiento: 
-                    <asp:Label ID="Label4" runat="server"></asp:Label>
-                            </span>
-                            <br />
-                            <span style="color: #660066; text-align: center;">Estado: 
-                    <asp:Label ID="Label5" runat="server"></asp:Label>
-                            </span>
-                            <br />
-                            <span style="color: #660066; text-align: center;">Monto: 
-                    <asp:Label ID="Label6" runat="server"></asp:Label>
-                            </span>
-                            <br />
-                            <span style="color: #660066; text-align: center;">Saldo: 
-                    <asp:Label ID="Label7" runat="server"></asp:Label>
-                            </span>
-                            <br />
-                        </h4>
+                        <h1 style="color: #660066; text-align: center;"><strong>H</strong>istorial</h1>
+                        <asp:Panel ID="Panel2" runat="server" Height="64px"></asp:Panel>
+
+                        <div class="meta-text">
+                            <h3>Periodicidad: 
+                                 <asp:TextBox ID="TextBox1" runat="server" Width="180px" Text="01/01/2016"></asp:TextBox>
+                                <asp:Button ID="Button1" runat="server" Text="Buscar" OnClick="periodicidad" BackColor="White" Width="180px" />
+                            </h3>
+                        </div>
+                        <asp:Panel ID="Panel1" runat="server" Height="64px"></asp:Panel>
 
                         <div class="underline">
                             <i class="fa fa-ellipsis-h"></i>
                         </div>
-                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowCommand="GridView1_RowCommand" CellPadding="1" ForeColor="#333333" GridLines="Both" Width="800px">
+
+                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="1" ForeColor="#333333" GridLines="Both" Width="800px">
                             <AlternatingRowStyle BackColor="White" />
                             <Columns>
-                                <asp:BoundField DataField="fechagestion" DataFormatString="{0:d}" HeaderText="Fecha Gestión" />
-                                <asp:BoundField DataField="seguimiento" DataFormatString="{0:d}" HeaderText="Seguimiento" />
-                                <asp:BoundField DataField="estado" DataFormatString="{0:N0}" HeaderText="Estado" />
-                                <asp:BoundField DataField="idusuario" DataFormatString="{0:N0}" HeaderText="Usuario" />
-                                <asp:ButtonField ButtonType="Link" runat="server" CommandName="adjunto" HeaderText="Soporte" Text="Adjunto" ControlStyle-Font-Bold="true" />
+                                <asp:BoundField DataField="IDFACTURA" DataFormatString="{0:f0}" HeaderText="Factura" />
+                                <asp:BoundField DataField="IDCLIENTE" DataFormatString="{0:f0}" HeaderText="Cliente" />
+                                <asp:BoundField DataField="FECHAFACTURA" DataFormatString="{0:d}" HeaderText="Fecha de Factura" />
+                                <asp:BoundField DataField="MONTO" DataFormatString="{0:N0}" HeaderText="Monto" />
+                                <asp:BoundField DataField="SALDO" DataFormatString="{0:N0}" HeaderText="Saldo" />
+                                <asp:BoundField DataField="VENCIMIENTO" DataFormatString="{0:d}" HeaderText="Fecha Vencimiento" />
+                                <asp:BoundField DataField="ESTADO" DataFormatString="{0:N0}" HeaderText="Estado" />
                             </Columns>
                             <EditRowStyle BackColor="#660066" />
                             <FooterStyle BackColor="#660066" Font-Bold="True" ForeColor="White" />

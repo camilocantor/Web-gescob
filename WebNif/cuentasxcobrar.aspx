@@ -21,11 +21,11 @@
                         <i class="fa fa-ellipsis-h"></i>
                     </div>
 
-                    <div class="meta-text">
+                    <!--<div class="meta-text">
                         <h3>Periodicidad:
                             <asp:TextBox ID="TextBox3" runat="server" Width="200px"></asp:TextBox></h3>
                         <asp:Panel ID="Panel5" runat="server" Width="299px" Height="64px"></asp:Panel>
-                    </div>
+                    </div>-->
 
                 </div>
 

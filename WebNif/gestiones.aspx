@@ -10,14 +10,23 @@
                     <div class="row">
                         <div class="col-sm-5 col-md-6">
                             <div class="app-image">
-                                <asp:GridView ID="GridView4" runat="server" AutoGenerateColumns="False"
+                                <asp:GridView ID="GridView4" runat="server" AutoGenerateColumns="False" CellPadding="1" ForeColor="#333333" Width="573px">
+                                    <AlternatingRowStyle BackColor="White" />
+                                    <Columns>
+                                        <asp:BoundField DataField="IDFACTURA" DataFormatString="{0:N0}" HeaderText="ID Factura" />
+                                        <asp:BoundField DataField="fechagestion" DataFormatString="{0:d}" HeaderText="Fecha Gestión" />
+                                        <asp:BoundField DataField="seguimiento" DataFormatString="{0:N0}" HeaderText="Seguimiento" />
+                                        <asp:BoundField DataField="estado" DataFormatString="{0:N0}" HeaderText="Estado" />
+                                        <asp:BoundField DataField="idusuario" DataFormatString="{0:N0}" HeaderText="Usuario" />
+                                    </Columns>
+
+                                    <%--<asp:GridView ID="GridView4" runat="server" AutoGenerateColumns="False"
                                     OnRowCancelingEdit="GridView4_RowCancelingEdit"
                                     OnRowEditing="GridView4_RowEditing"
                                     OnRowUpdating="GridView4_RowUpdating" CellPadding="1" ForeColor="#333333">
 
                                     <AlternatingRowStyle BackColor="White" />
-
-                                    <Columns>
+                                        <Columns>
                                         <asp:CommandField ButtonType="Image"
                                             ShowEditButton="true" EditImageUrl="~/Icons/images.jpg"
                                             UpdateImageUrl="~/Icons/confirmar.jpg"
@@ -31,11 +40,6 @@
                                         <asp:TemplateField HeaderText="ID FACTURA">
                                             <ItemTemplate>
                                                 <asp:Label ID="IDFACTURA" runat="server" Text='<%# Bind("IDFACTURA") %>'></asp:Label>
-                                            </ItemTemplate>
-                                        </asp:TemplateField>
-                                        <asp:TemplateField HeaderText="CONTADOR">
-                                            <ItemTemplate>
-                                                <asp:Label ID="CONTADOR" runat="server" Text='<%# Bind("CONTADOR") %>'></asp:Label>
                                             </ItemTemplate>
                                         </asp:TemplateField>
                                         <asp:TemplateField HeaderText="FECHA DE GESTION">
@@ -74,7 +78,8 @@
                                                 <asp:Label ID="L_ADJUNTO" runat="server" Text='<%# Bind("ADJUNTO") %>'></asp:Label>
                                             </ItemTemplate>
                                         </asp:TemplateField>
-                                    </Columns>
+                                    </Columns>--%>
+
                                     <EditRowStyle BackColor="#660066" />
                                     <FooterStyle BackColor="#660066" ForeColor="White" Font-Bold="True" />
                                     <HeaderStyle BackColor="#660066" Font-Bold="True" ForeColor="White" />
@@ -92,20 +97,20 @@
                         <div class="col-sm-7 col-md-6">
                             <div class="content">
                                 <div class="header">
-                                    <h1><strong>G</strong>estiones <strong>P</strong>endientes</h1>
+                                    <h1><strong>G</strong>estiones</h1>
                                 </div>
 
                                 </br>
                                 <div class="button" id="enviarcorreo" style="text-align: center">
-                                    <a runat="server" href="~/correo.aspx" class="btn btn-default btn-lg custom-btn get-btn" style="width:190px;"><i class="fa fa-cloud-download"></i>Enviar correo</a>
+                                    <a runat="server" href="~/correo.aspx" class="btn btn-default btn-lg custom-btn get-btn" style="width: 190px;"><i class="fa fa-cloud-download"></i>Enviar correo</a>
                                 </div>
 
                                 <div class="button" id="agregartarea" style="text-align: center">
-                                    <a runat="server" href="#nuevatarea" class="btn btn-default btn-lg custom-btn get-btn" style="width:190px;"><i class="fa fa-cloud-download"></i>Agregar tarea</a>
+                                    <a runat="server" href="~/nuevagestion.aspx" class="btn btn-default btn-lg custom-btn get-btn" style="width: 190px;"><i class="fa fa-cloud-download"></i>Nueva Gestión</a>
                                 </div>
 
                                 <div class="button" id="historialgestiones" style="text-align: center">
-                                    <a runat="server" href="~/historial_gestiones.aspx" class="btn btn-default btn-lg custom-btn get-btn" style="width:190px;"><i class="fa fa-cloud-download"></i>Historial</a>
+                                    <a runat="server" href="~/historial.aspx" class="btn btn-default btn-lg custom-btn get-btn" style="width: 190px;"><i class="fa fa-cloud-download"></i>Historial</a>
                                 </div>
 
 
