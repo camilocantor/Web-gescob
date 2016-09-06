@@ -23,22 +23,39 @@ namespace WebNif
             {
                 // Grilla inicial clientes
                 Conexion cnc = new Conexion();
-                string sqlc = "select comcenum_csc_recaudo, PERIODO, FECHA_PAGO, SALDOCAPITAL, NUEVOCAPITAL, NUEVOCAPITALNIFF, SOBRETASA from erp_plan_pagos where ERP_PRESTAMO_ID=13 and comcenum_csc_recaudo is not null order by periodo";
+                string sqlc = "select idcliente, nombre, actividad, email, telefono, direccion, contacto from gc_clientes order by idcliente";
                 DataTable dtc = (DataTable)cnc.Query(sqlc, Conexion.TipoDato.Table);
                 GridView3.DataSource = dtc;
                 GridView3.DataBind();
             }
+
+            Page.MaintainScrollPositionOnPostBack = true;
+
         }
 
         protected void cliente(object sender, EventArgs e)
         {
             MultiView1.ActiveViewIndex = 1;
 
+            string idcliente = TextBox1.Text;
+
             Conexion cn = new Conexion();
-            string sql = "select comcenum_csc_recaudo, PERIODO, FECHA_PAGO, SALDOCAPITAL, NUEVOCAPITAL, NUEVOCAPITALNIFF, SOBRETASA from erp_plan_pagos where ERP_PRESTAMO_ID=128 and comcenum_csc_recaudo is not null order by periodo";
+            string sql = "select IDFACTURA, FECHAFACTURA, MONTO, SALDO, VENCIMIENTO, ESTADO from gc_facturas where idcliente=" + idcliente;
             dt = (DataTable)cn.Query(sql, Conexion.TipoDato.Table);
             GridView2.DataSource = dt;
             GridView2.DataBind();
+
+            Conexion cn1 = new Conexion();
+            string sql1 = "select idcliente, nombre, actividad, email, telefono, direccion, contacto from gc_clientes where idcliente=" + idcliente;
+            DataTable dt1 = (DataTable)cn1.Query(sql1, Conexion.TipoDato.Table);
+
+            Label1.Text = dt1.Rows[0][0].ToString();
+            Label2.Text = dt1.Rows[0][1].ToString();
+            Label3.Text = dt1.Rows[0][2].ToString();
+            Label4.Text = dt1.Rows[0][3].ToString();
+            Label5.Text = dt1.Rows[0][4].ToString();
+            Label6.Text = dt1.Rows[0][5].ToString();
+            Label7.Text = dt1.Rows[0][6].ToString();
 
             Page.MaintainScrollPositionOnPostBack = true;
         }
@@ -55,6 +72,7 @@ namespace WebNif
             }
 
         }
+
 
     }
 }
