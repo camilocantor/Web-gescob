@@ -58,7 +58,7 @@
                     <asp:Label ID="Label4" runat="server"></asp:Label>
                             </span>
                             <br />
-                            <span style="color: #660066; text-align: center;">Concepto: 
+                            <span style="color: #660066; text-align: center;">Estado: 
                     <asp:Label ID="Label5" runat="server"></asp:Label>
                             </span>
                             <br />
@@ -78,13 +78,11 @@
                         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowCommand="GridView1_RowCommand" CellPadding="1" ForeColor="#333333" GridLines="Both" Width="800px">
                             <AlternatingRowStyle BackColor="White" />
                             <Columns>
-                                <asp:BoundField DataField="PERIODO" DataFormatString="{0:f0}" HeaderText="" />
-                                <asp:BoundField DataField="comcenum_csc_recaudo" DataFormatString="{0:f0}" HeaderText="ID Gestión" />
-                                <asp:BoundField DataField="FECHA_PAGO" DataFormatString="{0:d}" HeaderText="Fecha" />
-                                <asp:BoundField DataField="SALDOCAPITAL" DataFormatString="{0:N0}" HeaderText="Estado Anterior" />
-                                <asp:BoundField DataField="CUOTAFIJA" DataFormatString="{0:N0}" HeaderText="Gestión" />
-                                <asp:BoundField DataField="NUEVOCAPITAL" DataFormatString="{0:N0}" HeaderText="Respuesta" />
-                                <asp:BoundField DataField="SOBRETASA" DataFormatString="{0:N0}" HeaderText="Nuevo Estado" />
+                                <asp:BoundField DataField="contador" DataFormatString="{0:N0}" HeaderText="" />
+                                <asp:BoundField DataField="fechagestion" DataFormatString="{0:d}" HeaderText="Fecha Gestión" />
+                                <asp:BoundField DataField="seguimiento" DataFormatString="{0:d}" HeaderText="Seguimiento" />
+                                <asp:BoundField DataField="estado" DataFormatString="{0:N0}" HeaderText="Estado" />
+                                <asp:BoundField DataField="idusuario" DataFormatString="{0:N0}" HeaderText="Usuario" />
                                 <asp:ButtonField ButtonType="Link" runat="server" CommandName="adjunto" HeaderText="Soporte" Text="Adjunto" ControlStyle-Font-Bold="true" />
 
                             </Columns>

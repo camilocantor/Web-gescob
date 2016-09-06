@@ -561,6 +561,7 @@ Section Description
     border: 1px solid #660066;
     padding-right: 30px;
     color: #660066;
+    width: 184px;
 }
 .description .content .button a {
 	margin-right: 30px;

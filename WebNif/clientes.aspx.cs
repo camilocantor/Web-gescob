@@ -71,8 +71,13 @@ namespace WebNif
                 Response.Redirect("historial_pagos.aspx?idFactura=" + idFactura.ToString());
             }
 
-        }
 
+            if (e.CommandName == "historial_gestiones")
+            {
+                Response.Redirect("historial_gestiones.aspx?idFactura=" + idFactura.ToString());
+            }
+
+        }
 
     }
 }

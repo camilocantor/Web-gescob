@@ -20,6 +20,13 @@
                     <div class="underline">
                         <i class="fa fa-ellipsis-h"></i>
                     </div>
+
+                    <div class="meta-text">
+                        <h3>Periodicidad:
+                            <asp:TextBox ID="TextBox3" runat="server" Width="200px"></asp:TextBox></h3>
+                        <asp:Panel ID="Panel5" runat="server" Width="299px" Height="64px"></asp:Panel>
+                    </div>
+
                 </div>
 
                 <div class="row">
@@ -32,6 +39,7 @@
                                         <div class="icon" onclick="buscar_factura">
                                             <div class="icon-style"><i class="fa fa-search"></i></div>
                                         </div>
+
                                         <div class="meta-text">
                                             <h3>Factura: </h3>
                                             <asp:TextBox ID="TextBox1" runat="server" Width="200px"></asp:TextBox>
@@ -62,7 +70,7 @@
                                             <div class="icon-style"><i class="fa fa-send"></i></div>
                                         </div>
                                         <div class="meta-text">
-                                            <h3>Todas CuentasPorCobrar </h3>
+                                            <h3>Todas Facturas </h3>
                                             <asp:Button ID="Button4" runat="server" Text="Buscar" OnClick="buscar_todas" BackColor="White" Width="200px" />
                                         </div>
 
@@ -78,14 +86,15 @@
                             <asp:GridView ID="GridView1" Width="800px" runat="server" AutoGenerateColumns="False" OnRowCommand="GridView1_RowCommand" CellPadding="1" ForeColor="#333333" GridLines="Both">
                                 <AlternatingRowStyle BackColor="White" />
                                 <Columns>
-                                    <asp:BoundField DataField="comcenum_csc_recaudo" DataFormatString="{0:f0}" HeaderText="Factura" />
-                                    <asp:BoundField DataField="PERIODO" DataFormatString="{0:f0}" HeaderText="Cliente" />
-                                    <asp:BoundField DataField="FECHA_PAGO" DataFormatString="{0:d}" HeaderText="Fecha de Vencimiento" />
-                                    <asp:BoundField DataField="SALDOCAPITAL" DataFormatString="{0:N0}" HeaderText="Saldo" />
-                                    <asp:BoundField DataField="NUEVOCAPITAL" DataFormatString="{0:N0}" HeaderText="Tipo de Pago" />
-                                    <asp:BoundField DataField="NUEVOCAPITALNIFF" DataFormatString="{0:N0}" HeaderText="Ultima Gestión" />
-                                    <asp:BoundField DataField="SOBRETASA" DataFormatString="{0:N0}" HeaderText="Estado" />
+                                    <asp:BoundField DataField="IDFACTURA" DataFormatString="{0:f0}" HeaderText="Factura" />
+                                    <asp:BoundField DataField="IDCLIENTE" DataFormatString="{0:f0}" HeaderText="Cliente" />
+                                    <asp:BoundField DataField="FECHAFACTURA" DataFormatString="{0:d}" HeaderText="Fecha de Factura" />
+                                    <asp:BoundField DataField="MONTO" DataFormatString="{0:N0}" HeaderText="Monto" />
+                                    <asp:BoundField DataField="SALDO" DataFormatString="{0:N0}" HeaderText="Saldo" />
+                                    <asp:BoundField DataField="VENCIMIENTO" DataFormatString="{0:d}" HeaderText="Fecha Vencimiento" />
+                                    <asp:BoundField DataField="ESTADO" DataFormatString="{0:N0}" HeaderText="Estado" />
                                     <asp:ButtonField ButtonType="Link" runat="server" CommandName="historial_pagos" Text="Historial de Pagos" ControlStyle-Font-Bold="true" />
+                                    <asp:ButtonField ButtonType="Link" runat="server" CommandName="historial_gestiones" Text="Historial de Gestiones" ControlStyle-Font-Bold="true" />
                                 </Columns>
                                 <EditRowStyle BackColor="#660066" />
                                 <FooterStyle BackColor="#660066" ForeColor="White" Font-Bold="True" />

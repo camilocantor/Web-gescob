@@ -23,17 +23,22 @@ namespace WebNif
             {
                 // Grilla inicial cuentas por cobrar
                 Conexion cn = new Conexion();
-                string sql = "select comcenum_csc_recaudo, PERIODO, FECHA_PAGO, SALDOCAPITAL, NUEVOCAPITAL, NUEVOCAPITALNIFF, SOBRETASA from erp_plan_pagos where ERP_PRESTAMO_ID=131 and comcenum_csc_recaudo is not null order by periodo";
+                string sql = "select IDFACTURA, IDCLIENTE, FECHAFACTURA, MONTO, SALDO, TIPOPAGO, VENCIMIENTO, ESTADO from gc_facturas order by vencimiento";
                 dt = (DataTable)cn.Query(sql, Conexion.TipoDato.Table);
                 GridView1.DataSource = dt;
                 GridView1.DataBind();
             }
+
+            Page.MaintainScrollPositionOnPostBack = true;
+
         }
 
         protected void buscar_factura(object sender, EventArgs e)
         {
+            string idfactura = TextBox1.Text;
+
             Conexion cn = new Conexion();
-            string sql = "select comcenum_csc_recaudo, PERIODO, FECHA_PAGO, SALDOCAPITAL, NUEVOCAPITAL, NUEVOCAPITALNIFF, SOBRETASA from erp_plan_pagos where ERP_PRESTAMO_ID=128 and comcenum_csc_recaudo is not null order by periodo";
+            string sql = "select IDFACTURA, IDCLIENTE, FECHAFACTURA, MONTO, SALDO, TIPOPAGO, VENCIMIENTO, ESTADO, ADJUNTO from gc_facturas where idfactura=" + idfactura;
             dt = (DataTable)cn.Query(sql, Conexion.TipoDato.Table);
             GridView1.DataSource = dt;
             GridView1.DataBind();
@@ -43,8 +48,10 @@ namespace WebNif
 
         protected void buscar_cliente(object sender, EventArgs e)
         {
+            string idcliente = TextBox2.Text;
+
             Conexion cn = new Conexion();
-            string sql = "select comcenum_csc_recaudo, PERIODO, FECHA_PAGO, SALDOCAPITAL, NUEVOCAPITAL, NUEVOCAPITALNIFF, SOBRETASA from erp_plan_pagos where ERP_PRESTAMO_ID=1 and comcenum_csc_recaudo is not null order by periodo";
+            string sql = "select IDFACTURA, IDCLIENTE, FECHAFACTURA, MONTO, SALDO, TIPOPAGO, VENCIMIENTO, ESTADO, ADJUNTO from gc_facturas where idcliente=" + idcliente + "order by idfactura";
             dt = (DataTable)cn.Query(sql, Conexion.TipoDato.Table);
             GridView1.DataSource = dt;
             GridView1.DataBind();
@@ -55,7 +62,7 @@ namespace WebNif
         protected void buscar_vencidas(object sender, EventArgs e)
         {
             Conexion cn = new Conexion();
-            string sql = "select comcenum_csc_recaudo, PERIODO, FECHA_PAGO, SALDOCAPITAL, NUEVOCAPITAL, NUEVOCAPITALNIFF, SOBRETASA from erp_plan_pagos where ERP_PRESTAMO_ID=30 and comcenum_csc_recaudo is not null order by periodo";
+            string sql = "select IDFACTURA, IDCLIENTE, FECHAFACTURA, MONTO, SALDO, TIPOPAGO, VENCIMIENTO, ESTADO, ADJUNTO from gc_facturas where estado='DEUDA VENCIDA' order by VENCIMIENTO";
             dt = (DataTable)cn.Query(sql, Conexion.TipoDato.Table);
             GridView1.DataSource = dt;
             GridView1.DataBind();
@@ -66,7 +73,7 @@ namespace WebNif
         protected void buscar_todas(object sender, EventArgs e)
         {
             Conexion cn = new Conexion();
-            string sql = "select comcenum_csc_recaudo, PERIODO, FECHA_PAGO, SALDOCAPITAL, NUEVOCAPITAL, NUEVOCAPITALNIFF, SOBRETASA from erp_plan_pagos where ERP_PRESTAMO_ID=13 and comcenum_csc_recaudo is not null order by periodo";
+            string sql = "select IDFACTURA, IDCLIENTE, FECHAFACTURA, MONTO, SALDO, TIPOPAGO, VENCIMIENTO, ESTADO, ADJUNTO from gc_facturas order by VENCIMIENTO";
             dt = (DataTable)cn.Query(sql, Conexion.TipoDato.Table);
             GridView1.DataSource = dt;
             GridView1.DataBind();
@@ -85,6 +92,13 @@ namespace WebNif
                 Response.Redirect("historial_pagos.aspx?idFactura=" + idFactura.ToString());
             }
 
+            if (e.CommandName == "historial_gestiones")
+            {
+                Response.Redirect("historial_gestiones.aspx?idFactura=" + idFactura.ToString());
+            }
+
+
         }
+
     }
 }

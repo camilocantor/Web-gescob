@@ -78,15 +78,11 @@
                         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowCommand="GridView1_RowCommand" CellPadding="1" ForeColor="#333333" GridLines="Both" Width="800px">
                             <AlternatingRowStyle BackColor="White" />
                             <Columns>
-                                <asp:BoundField DataField="PERIODO" DataFormatString="{0:f0}" HeaderText="" />
-                                <asp:BoundField DataField="comcenum_csc_recaudo" DataFormatString="{0:f0}" HeaderText="Gestión" />
-                                <asp:BoundField DataField="FECHA_PAGO" DataFormatString="{0:d}" HeaderText="Fecha de Pago" />
-                                <asp:BoundField DataField="SALDOCAPITAL" DataFormatString="{0:N0}" HeaderText="Saldo Anterior" />
-                                <asp:BoundField DataField="CUOTAFIJA" DataFormatString="{0:N0}" HeaderText="Pago" />
-                                <asp:BoundField DataField="NUEVOCAPITAL" DataFormatString="{0:N0}" HeaderText="Nuevo Saldo" />
-                                <asp:BoundField DataField="SOBRETASA" DataFormatString="{0:N0}" HeaderText="Estado" />
+                                <asp:BoundField DataField="contador" DataFormatString="{0:f0}" HeaderText="" />
+                                <asp:BoundField DataField="fechapago" DataFormatString="{0:d}" HeaderText="Fecha de Pago" />
+                                <asp:BoundField DataField="valorpago" DataFormatString="{0:d}" HeaderText="Valor de Pago" />
+                                <asp:BoundField DataField="nuevosaldo" DataFormatString="{0:N0}" HeaderText="Nuevo Saldo" />                             
                                 <asp:ButtonField ButtonType="Link" runat="server" CommandName="adjunto" HeaderText="Soporte" Text="Adjunto" ControlStyle-Font-Bold="true" />
-
                             </Columns>
                             <EditRowStyle BackColor="#660066" />
                             <FooterStyle BackColor="#660066" Font-Bold="True" ForeColor="White" />

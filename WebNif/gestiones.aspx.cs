@@ -15,7 +15,6 @@ namespace WebNif
 {
     public partial class gestiones : System.Web.UI.Page
     {
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -30,8 +29,7 @@ namespace WebNif
         private void llenar_grilla()
         {
             Conexion cn = new Conexion();
-            string Sql = "select TIPOPRESTAMO, TIPO, CUENTA, CSC_INTERES, CSC_RECAUDO, CUENTA_NIFF, CSC_INTERES_NIFF, CSC_RECAUDO_NIFF, DEUDORESCOLGAP, DEUDORESNIIF, SOBRETASA, COSTOAMORTIZADO from cuentas_prestamo ";
-            Sql = Sql + "order by tipoprestamo";
+            string Sql = "select IDFACTURA, CONTADOR, FECHAGESTION, SEGUIMIENTO, ESTADO, ADJUNTO, IDUSUARIO from gc_gestiones order by idfactura ";
             datos = (DataTable)cn.Query(Sql, Conexion.TipoDato.Table);
             GridView4.DataSource = datos;
             GridView4.DataBind();
@@ -56,59 +54,39 @@ namespace WebNif
         // ACTUALIZAR
         protected void GridView4_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
+
+            //IDFACTURA, CONTADOR, FECHAGESTION, SEGUIMIENTO, ESTADO, ADJUNTO, IDUSUARIO from gc_gestiones
+
             GridViewRow fila = GridView4.Rows[e.RowIndex];
 
-            Label Label_tipoprestamo = fila.FindControl("tipoprestamo") as Label;
-            Label Label_tipo = fila.FindControl("tipo") as Label;
-            string s_tipoprestamo = Label_tipoprestamo.Text;
-            string s_tipo = Label_tipo.Text;
+            Label Label_IDUSUARIO = fila.FindControl("IDUSUARIO") as Label;
+            Label Label_IDFACTURA = fila.FindControl("IDFACTURA") as Label;
+            Label Label_CONTADOR = fila.FindControl("CONTADOR") as Label;
+            string s_IDUSUARIO = Label_IDUSUARIO.Text;
+            string s_IDFACTURA = Label_IDFACTURA.Text;
+            string s_CONTADOR = Label_CONTADOR.Text;
 
-            TextBox t_cuenta = fila.FindControl("CUENTA") as TextBox;
-            TextBox t_csc_interes = fila.FindControl("CSC_INTERES") as TextBox;
-            TextBox t_csc_recaudo = fila.FindControl("CSC_RECAUDO") as TextBox;
-            TextBox t_cuenta_niff = fila.FindControl("CUENTA_NIFF") as TextBox;
-            TextBox t_csc_interes_niff = fila.FindControl("CSC_INTERES_NIFF") as TextBox;
-            TextBox t_csc_recaudo_niff = fila.FindControl("CSC_RECAUDO_NIFF") as TextBox;
-            TextBox t_deudorescolgap = fila.FindControl("DEUDORESCOLGAP") as TextBox;
-            TextBox t_deudoresniif = fila.FindControl("DEUDORESNIIF") as TextBox;
-            TextBox t_sobretasa = fila.FindControl("SOBRETASA") as TextBox;
-            TextBox t_costoamortizado = fila.FindControl("COSTOAMORTIZADO") as TextBox;
+            TextBox t_FECHAGESTION = fila.FindControl("FECHAGESTION") as TextBox;
+            TextBox t_SEGUIMIENTO = fila.FindControl("SEGUIMIENTO") as TextBox;
+            TextBox t_ESTADO = fila.FindControl("ESTADO") as TextBox;
+            TextBox t_ADJUNTO = fila.FindControl("ADJUNTO") as TextBox;
+            string s_FECHAGESTION = t_FECHAGESTION.Text;
+            string s_SEGUIMIENTO = t_SEGUIMIENTO.Text;
+            string s_ESTADO = t_ESTADO.Text;
+            string s_ADJUNTO = t_ADJUNTO.Text;
 
-            string s_cuenta = t_cuenta.Text;
-            string s_csc_interes = t_csc_interes.Text;
-            string s_csc_recaudo = t_csc_recaudo.Text;
-            string s_cuenta_niff = t_cuenta_niff.Text;
-            string s_csc_interes_niff = t_csc_interes_niff.Text;
-            string s_csc_recaudo_niff = t_csc_recaudo_niff.Text;
-            string s_deudorescolgap = t_deudorescolgap.Text;
-            string s_deudoresniif = t_deudoresniif.Text;
-            string s_sobretasa = t_sobretasa.Text;
-            string s_costoamortizado = t_costoamortizado.Text;
-
-            if (s_cuenta == "")
-                s_cuenta = "null";
-            if (s_csc_interes == "")
-                s_csc_interes = "null";
-            if (s_csc_recaudo == "")
-                s_csc_recaudo = "null";
-            if (s_cuenta_niff == "")
-                s_cuenta_niff = "null";
-            if (s_csc_interes_niff == "")
-                s_csc_interes_niff = "null";
-            if (s_csc_recaudo_niff == "")
-                s_csc_recaudo_niff = "null";
-            if (s_deudorescolgap == "")
-                s_deudorescolgap = "null";
-            if (s_deudoresniif == "")
-                s_deudoresniif = "null";
-            if (s_sobretasa == "")
-                s_sobretasa = "null";
-            if (s_costoamortizado == "")
-                s_costoamortizado = "null";
+            if (s_FECHAGESTION == "")
+                s_FECHAGESTION = "null";
+            if (s_SEGUIMIENTO == "")
+                s_SEGUIMIENTO = "null";
+            if (s_ESTADO == "")
+                s_ESTADO = "null";
+            if (s_ADJUNTO == "")
+                s_ADJUNTO = "null";
 
 
             Conexion cn = new Conexion();
-            string sql = "update cuentas_prestamo set CUENTA=" + s_cuenta + ", CSC_INTERES=" + s_csc_interes + ", CSC_RECAUDO=" + s_csc_recaudo + ", CUENTA_NIFF=" + s_cuenta_niff + ", CSC_INTERES_NIFF=" + s_csc_interes_niff + ", CSC_RECAUDO_NIFF=" + s_csc_recaudo_niff + ", DEUDORESCOLGAP=" + s_deudorescolgap + ", DEUDORESNIIF=" + s_deudoresniif + ", SOBRETASA=" + s_sobretasa + ", COSTOAMORTIZADO=" + s_costoamortizado + " where TIPOPRESTAMO=" + s_tipoprestamo;
+            string sql = "update gc_gestiones set FECHAGESTION=" + s_FECHAGESTION + ", SEGUIMIENTO=" + s_SEGUIMIENTO + ", ESTADO=" + s_ESTADO + ", ADJUNTO=" + s_ADJUNTO;
             cn.Query(sql);
 
             GridView4.EditIndex = -1;
@@ -117,6 +95,7 @@ namespace WebNif
 
             Page.MaintainScrollPositionOnPostBack = true;
         }
+
 
     }
 }

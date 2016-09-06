@@ -10,8 +10,11 @@
                     <h1 style="text-align: left"><strong>C</strong>orreo</h1>
                 </div>
 
+                <asp:Panel ID="Panel2" runat="server" Width="299px" Height="64px"></asp:Panel>
+
+
                 <div class="row">
-                    <div class="col-xs-12 col-md-6">
+                    <div class="col-sm-6 col-md-6">
 
                         <asp:PlaceHolder runat="server" ID="PlaceHolder1" Visible="false">
                             <p class="text-danger">
@@ -45,10 +48,10 @@
                     </div>
 
                     <div class="col-xs-12 col-md-6">
-                        <div class="form-group">
+                        <div class="row">
                             <label for="mensaje" runat="server" associatedcontrolid="Mensaje" cssclass="col-md-2 control-label">Mensaje</label>
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="Mensaje" CssClass="text-danger" ErrorMessage="El campo Asunto es obligatorio." />
-                            <textarea name="Mensaje" id="Mensaje" cssclass="form-control" runat="server" rows="10" cols="100"></textarea>
+                            <textarea name="Mensaje" id="Mensaje" cssclass="form-control" runat="server" rows="11" cols="50"></textarea>
                         </div>
                     </div>
 

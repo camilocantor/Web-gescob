@@ -23,50 +23,55 @@
                                             UpdateImageUrl="~/Icons/confirmar.jpg"
                                             CancelImageUrl="~/Icons/cancelar.jpg" />
 
-                                        <asp:TemplateField HeaderText="Cliente">
+                                        <asp:TemplateField HeaderText="ID USUARIO">
                                             <ItemTemplate>
-                                                <asp:Label ID="tipoprestamo" runat="server" Text='<%# Bind("tipoprestamo") %>'></asp:Label>
+                                                <asp:Label ID="IDUSUARIO" runat="server" Text='<%# Bind("IDUSUARIO") %>'></asp:Label>
                                             </ItemTemplate>
                                         </asp:TemplateField>
-                                        <asp:TemplateField HeaderText="Factura">
+                                        <asp:TemplateField HeaderText="ID FACTURA">
                                             <ItemTemplate>
-                                                <asp:Label ID="tipo" runat="server" Text='<%# Bind("tipoprestamo") %>'></asp:Label>
+                                                <asp:Label ID="IDFACTURA" runat="server" Text='<%# Bind("IDFACTURA") %>'></asp:Label>
                                             </ItemTemplate>
                                         </asp:TemplateField>
-                                        <asp:TemplateField HeaderText="Fecha de Vencimiento">
+                                        <asp:TemplateField HeaderText="CONTADOR">
+                                            <ItemTemplate>
+                                                <asp:Label ID="CONTADOR" runat="server" Text='<%# Bind("CONTADOR") %>'></asp:Label>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                        <asp:TemplateField HeaderText="FECHA DE GESTION">
                                             <EditItemTemplate>
-                                                <asp:Label ID="Label_cuenta" Visible="false" runat="server" Text='<%# Bind("CUENTA") %>'></asp:Label>
-                                                <asp:TextBox ID="cuenta" runat="server" Text='<%# Bind("CUENTA") %>'></asp:TextBox>
+                                                <asp:Label ID="Label_FECHAGESTION" DataFormatString="{0:d}" Visible="false" runat="server" Text='<%# Bind("FECHAGESTION") %>'></asp:Label>
+                                                <asp:TextBox ID="FECHAGESTION" runat="server" Text='<%# Bind("FECHAGESTION") %>'></asp:TextBox>
                                             </EditItemTemplate>
                                             <ItemTemplate>
-                                                <asp:Label ID="L_cuenta" runat="server" Text='<%# Bind("CUENTA") %>'></asp:Label>
+                                                <asp:Label ID="L_FECHAGESTION" runat="server" Text='<%# Bind("FECHAGESTION") %>'></asp:Label>
                                             </ItemTemplate>
                                         </asp:TemplateField>
-                                        <asp:TemplateField HeaderText="Saldo">
+                                        <asp:TemplateField HeaderText="SEGUIMIENTO">
                                             <EditItemTemplate>
-                                                <asp:Label ID="Label_deudorescolgap" Visible="false" runat="server" Text='<%# Bind("DEUDORESCOLGAP") %>'></asp:Label>
-                                                <asp:TextBox ID="deudorescolgap" runat="server" Text='<%# Bind("DEUDORESCOLGAP") %>'></asp:TextBox>
+                                                <asp:Label ID="Label_SEGUIMIENTO" Visible="false" runat="server" Text='<%# Bind("SEGUIMIENTO") %>'></asp:Label>
+                                                <asp:TextBox ID="t_SEGUIMIENTO" runat="server" Text='<%# Bind("SEGUIMIENTO") %>'></asp:TextBox>
                                             </EditItemTemplate>
                                             <ItemTemplate>
-                                                <asp:Label ID="L_deudorescolgap" runat="server" Text='<%# Bind("DEUDORESCOLGAP") %>'></asp:Label>
+                                                <asp:Label ID="L_SEGUIMIENTO" runat="server" Text='<%# Bind("SEGUIMIENTO") %>'></asp:Label>
                                             </ItemTemplate>
                                         </asp:TemplateField>
-                                        <asp:TemplateField HeaderText="Gestion">
+                                        <asp:TemplateField HeaderText="ESTADO">
                                             <EditItemTemplate>
-                                                <asp:Label ID="Label_csc_interes" Visible="false" runat="server" Text='<%# Bind("CSC_INTERES") %>'></asp:Label>
-                                                <asp:TextBox ID="csc_interes" runat="server" Text='<%# Bind("CSC_INTERES") %>'></asp:TextBox>
+                                                <asp:Label ID="Label_ESTADO" Visible="false" runat="server" Text='<%# Bind("ESTADO") %>'></asp:Label>
+                                                <asp:TextBox ID="ESTADO" runat="server" Text='<%# Bind("ESTADO") %>'></asp:TextBox>
                                             </EditItemTemplate>
                                             <ItemTemplate>
-                                                <asp:Label ID="L_csc_interes" runat="server" Text='<%# Bind("CSC_INTERES") %>'></asp:Label>
+                                                <asp:Label ID="L_ESTADO" runat="server" Text='<%# Bind("ESTADO") %>'></asp:Label>
                                             </ItemTemplate>
                                         </asp:TemplateField>
-                                        <asp:TemplateField HeaderText="Estado">
+                                        <asp:TemplateField HeaderText="ADJUNTO">
                                             <EditItemTemplate>
-                                                <asp:Label ID="Label_csc_recaudo" Visible="false" runat="server" Text='<%# Bind("tipoprestamo") %>'></asp:Label>
-                                                <asp:TextBox ID="csc_recaudo" runat="server" Text='<%# Bind("tipoprestamo") %>'></asp:TextBox>
+                                                <asp:Label ID="Label_ADJUNTO" Visible="false" runat="server" Text='<%# Bind("ADJUNTO") %>'></asp:Label>
+                                                <asp:TextBox ID="ADJUNTO" runat="server" Text='<%# Bind("ADJUNTO") %>'></asp:TextBox>
                                             </EditItemTemplate>
                                             <ItemTemplate>
-                                                <asp:Label ID="L_csc_recaudo" runat="server" Text='<%# Bind("tipoprestamo") %>'></asp:Label>
+                                                <asp:Label ID="L_ADJUNTO" runat="server" Text='<%# Bind("ADJUNTO") %>'></asp:Label>
                                             </ItemTemplate>
                                         </asp:TemplateField>
                                     </Columns>
@@ -91,12 +96,16 @@
                                 </div>
 
                                 </br>
-                                    <div class="button" id="enviarcorreo" style="text-align: center">
-                                        <a runat="server" href="~/correo.aspx" class="btn btn-default btn-lg custom-btn get-btn"><i class="fa fa-cloud-download"></i>Enviar correo</a>
-                                    </div>
+                                <div class="button" id="enviarcorreo" style="text-align: center">
+                                    <a runat="server" href="~/correo.aspx" class="btn btn-default btn-lg custom-btn get-btn" style="width:190px;"><i class="fa fa-cloud-download"></i>Enviar correo</a>
+                                </div>
 
                                 <div class="button" id="agregartarea" style="text-align: center">
-                                    <a href="#nuevatarea" class="btn btn-default btn-lg custom-btn get-btn"><i class="fa fa-cloud-download"></i>Agregar tarea</a>
+                                    <a runat="server" href="#nuevatarea" class="btn btn-default btn-lg custom-btn get-btn" style="width:190px;"><i class="fa fa-cloud-download"></i>Agregar tarea</a>
+                                </div>
+
+                                <div class="button" id="historialgestiones" style="text-align: center">
+                                    <a runat="server" href="~/historial_gestiones.aspx" class="btn btn-default btn-lg custom-btn get-btn" style="width:190px;"><i class="fa fa-cloud-download"></i>Historial</a>
                                 </div>
 
 
