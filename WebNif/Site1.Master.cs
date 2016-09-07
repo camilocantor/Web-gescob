@@ -75,5 +75,15 @@ namespace WebNif
 
         }
 
+        protected void logout(object sender, EventArgs e)
+        {
+            FormsAuthentication.SignOut();
+            //FormsAuthentication.RedirectToLoginPage();
+            Response.Write("<script language=javascript>window.close();</script>");
+        }
+
+
+
+
     }
 }

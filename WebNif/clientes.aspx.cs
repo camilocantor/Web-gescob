@@ -23,7 +23,7 @@ namespace WebNif
             {
                 // Grilla inicial clientes
                 Conexion cnc = new Conexion();
-                string sqlc = "select idcliente, nombre, actividad, email, telefono, direccion, contacto from gc_clientes order by idcliente";
+                string sqlc = "select idcliente, nombre, actividad, email, telefono, direccion, contacto from gc_clientes where idcliente > 0 order by idcliente";
                 DataTable dtc = (DataTable)cnc.Query(sqlc, Conexion.TipoDato.Table);
                 GridView3.DataSource = dtc;
                 GridView3.DataBind();

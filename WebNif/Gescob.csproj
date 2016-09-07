@@ -133,34 +133,22 @@
     <Content Include="Icons\mas.ico" />
     <Content Include="Icons\pagar.jpg" />
     <Content Include="Icons\trash.gif" />
-    <Content Include="images\01.jpg" />
-    <Content Include="images\02.jpg" />
-    <Content Include="images\03.jpg" />
-    <Content Include="images\04.jpg" />
     <Content Include="images\20150713_152930.jpg" />
     <Content Include="images\20150713_164410.jpg" />
     <Content Include="images\20150713_175938.jpg" />
-    <Content Include="images\amazon.png" />
-    <Content Include="images\app.jpg" />
-    <Content Include="images\app2.jpg" />
-    <Content Include="images\asesoria-financiera-contable-software-contable-y-admtivo-731601-MCO20361243699_072015-F.jpg" />
     <Content Include="images\duel-phone-big.png" />
     <Content Include="images\fondoWeb.jpg" />
     <Content Include="images\foto.png" />
+    <Content Include="images\negro.jpg" />
     <Content Include="images\niif-informacion-global.jpg" />
     <Content Include="images\pattern-1.png" />
     <Content Include="images\phone.png" />
     <Content Include="images\phone2.png" />
     <Content Include="images\phone3.png" />
-    <Content Include="images\pink.jpg" />
-    <Content Include="images\playstore.png" />
     <Content Include="images\slide_desarrollo.png" />
     <Content Include="images\thumb400_noticia-cloud-computing-tiendacloud-fondo.jpg" />
-    <Content Include="Img\boton_volver.gif" />
-    <Content Include="Img\btnNo.jpg" />
-    <Content Include="Img\btnyes.jpg" />
-    <Content Include="Img\Close.gif" />
     <Content Include="index.aspx" />
+    <Content Include="iniciarsesion.aspx" />
     <Content Include="inicio.aspx" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\jquery.js" />
@@ -263,6 +251,13 @@
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="iniciarsesion.aspx.cs">
+      <DependentUpon>iniciarsesion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="iniciarsesion.aspx.designer.cs">
+      <DependentUpon>iniciarsesion.aspx</DependentUpon>
     </Compile>
     <Compile Include="inicio.aspx.cs">
       <DependentUpon>inicio.aspx</DependentUpon>

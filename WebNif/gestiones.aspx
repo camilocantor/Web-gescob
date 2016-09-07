@@ -2,7 +2,6 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <!-- ====== GESTIONES PENDIENTES ====== -->
     <section id="gestiones">
         <div class="description">
             <div class="description-one section-padding">
@@ -123,6 +122,5 @@
 
         </div>
     </section>
-    <!-- ====== End tareas ====== -->
 
 </asp:Content>

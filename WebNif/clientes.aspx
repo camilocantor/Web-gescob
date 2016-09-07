@@ -2,20 +2,20 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <!-- ====== CLIENTES ====== -->
     <section id="clientes">
         <div class="features section-padding">
             <div class="container">
                 <div class="header">
                     <h1><strong>C</strong>lientes</h1>
-                    <p>Want more Bootstrap themes & templates? Subscribe to our mailing list to receive an update when new items arrive! Akshara is a library to buy Bootstrap themes and templates for your business need. Want more Bootstrap themes & templates ? Want more Bootstrap themes & templates?</p>
+                    <br />
+                    <p>Desde el punto de vista contable, la cuenta de clientes recoge los derechos de cobro derivados de la venta de productos de la empresa, que se ocasiona debido al desajuste entre la venta y el cobro. Tienen la consideración de activos financieros y figuran normalmente en el activo corriente del balance.</p>
 
                     <div class="underline">
                         <i class="fa fa-ellipsis-h"></i>
                     </div>
 
                     <div class="meta-text">
-                        <h3>Cliente: 
+                        <h3>ID Cliente: 
                                  <asp:TextBox ID="TextBox1" runat="server" Width="180px"></asp:TextBox>
                             <asp:Button ID="Button1" runat="server" Text="Buscar" OnClick="cliente" BackColor="White" Width="180px" />
                         </h3>
@@ -123,6 +123,5 @@
             </div>
         </div>
     </section>
-    <!-- ====== End CLIENTES ====== -->
 
 </asp:Content>

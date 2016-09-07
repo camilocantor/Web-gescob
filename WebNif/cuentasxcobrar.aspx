@@ -2,20 +2,15 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <!-- ====== End CUENTAS POR COBRAR ====== -->
     <section id="cuentasporcobrar">
         <div class="features section-padding">
             <div class="container">
 
                 <div class="header">
                     <h1><strong>C</strong>uentas por <strong>C</strong>obrar</h1>
-                    <p>
-                        <span style="color: rgb(37, 37, 37); font-family: sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.4px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(255, 255, 255);">
-                            <span class="Apple-converted-space">&nbsp;</span>
-                            Crédito que la empresa concede a sus clientes a través de una cuenta abierta en el curso ordinario de un negocio, como resultado de la entrega de artículos o servicios.
-                                Las cuentas por cobrar se consideran como parte del activo circulante de la empresa, por lo que se presta muchísima atención a la administración eficiente de las mismas.
-                            <span class="Apple-converted-space">&nbsp;</span>
-                        </span>
+                    <br />
+                    <p>Crédito que la empresa concede a sus clientes a través de una cuenta abierta en el curso ordinario de un negocio, como resultado de la entrega de artículos o servicios.
+                        Las cuentas por cobrar se consideran como parte del activo circulante de la empresa, por lo que se presta muchísima atención a la administración eficiente de las mismas.
                     </p>
                     <div class="underline">
                         <i class="fa fa-ellipsis-h"></i>
@@ -41,7 +36,7 @@
                                         </div>
 
                                         <div class="meta-text">
-                                            <h3>Factura: </h3>
+                                            <h3>IDFactura: </h3>
                                             <asp:TextBox ID="TextBox1" runat="server" Width="200px"></asp:TextBox>
                                             <asp:Button ID="Button1" runat="server" Text="Buscar" OnClick="buscar_factura" BackColor="White" Width="200px" />
                                         </div>
@@ -51,7 +46,7 @@
                                             <div class="icon-style"><i class="fa fa-desktop"></i></div>
                                         </div>
                                         <div class="meta-text">
-                                            <h3>Cliente: </h3>
+                                            <h3>IDCliente: </h3>
                                             <asp:TextBox ID="TextBox2" runat="server" Width="200px"></asp:TextBox>
                                             <asp:Button ID="Button2" runat="server" Text="Buscar" OnClick="buscar_cliente" BackColor="White" Width="200px" />
                                         </div>
@@ -114,7 +109,6 @@
             </div>
         </div>
     </section>
-    <!-- ====== End CUENTAS POR COBRAR ====== -->
 
 </asp:Content>
 

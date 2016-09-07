@@ -2,7 +2,6 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <!-- ====== INICIO ====== prueba para aleja-->
     <header id="inicio">
         <div class="bg-color">
             <div class="top section-padding">
@@ -86,7 +85,6 @@
             </div>
         </div>
     </header>
-    <!-- ====== End INICIO ====== -->
 
     <!-- ====== MI CUENTA ====== -->
     <%--<footer id="micuenta">

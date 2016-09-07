@@ -19,7 +19,7 @@ namespace WebNif
         {
             if (!Page.IsPostBack)
             {
-
+                int idUsuario = Convert.ToInt32(Request["idUsuario"]); // Obtiene obj
             }
 
             graficos_inicio();
@@ -97,78 +97,6 @@ namespace WebNif
             //Chart4.Legends[0].Enabled = true;
 
         }
-
-        //protected void enviar_correo(object sender, EventArgs e)
-        //{
-        //    //Creamos un nuevo Objeto de mensaje
-        //    System.Net.Mail.MailMessage mmsg = new System.Net.Mail.MailMessage();
-
-        //    //Direccion de correo electronico a la que queremos enviar el mensaje
-        //    string destinatario = TextBox6.Text;
-        //    mmsg.To.Add(destinatario); // To es una colección que permite enviar el mensaje a más de un destinatario
-
-        //    //Asunto
-        //    mmsg.Subject = TextBox7.Text;
-        //    mmsg.SubjectEncoding = System.Text.Encoding.UTF8;
-
-        //    //Direccion de correo electronico que queremos que reciba una copia del mensaje
-        //    mmsg.Bcc.Add("alexatrujillojimenez@gmail.com");
-
-        //    //Cuerpo del Mensaje
-        //    mmsg.Body = message.InnerText; // "mensaje de correo" textarea
-        //    mmsg.BodyEncoding = System.Text.Encoding.UTF8;
-        //    mmsg.IsBodyHtml = false; //Si no queremos que se envíe como HTML
-
-        //    // Crear el archivo adjunto para el mensaje 
-        //    Attachment adj = new Attachment("C:/Users/ALEXA TRUJILLO/Desktop/Gestion cobros/Web gescob/WebNif/adjuntos/pago.pdf");
-        //    mmsg.Attachments.Add(adj);
-
-        //    //Correo electronico desde el que enviamos el mensaje
-        //    mmsg.From = new System.Net.Mail.MailAddress("alexatrujillojimenez@gmail.com");
-
-
-        //    // CLIENTE DE CORREO
-        //    //Creamos un objeto de cliente de correo
-        //    System.Net.Mail.SmtpClient cliente = new System.Net.Mail.SmtpClient();
-        //    //Hay que crear las credenciales del correo emisor
-        //    cliente.Credentials = new System.Net.NetworkCredential("alexatrujillojimenez@gmail.com", "231992matj");
-        //    //Lo siguiente es obligatorio si enviamos el mensaje desde Gmail     
-        //    cliente.Port = 587;
-        //    cliente.EnableSsl = true;         
-
-        //    cliente.Host = "smtp.gmail.com"; //"mail.servidordominio.com"; //Para Gmail "smtp.gmail.com";
-
-
-        //    //-------------------------ENVIO DE CORREO----------------------*/
-        //    try
-        //    {
-        //        //Enviamos el mensaje      
-        //        cliente.Send(mmsg);
-        //        Label8.Text = "Mensaje enviado!";
-        //        Page.MaintainScrollPositionOnPostBack = true;
-        //    }
-        //    catch (System.Net.Mail.SmtpException ex)
-        //    {
-        //        Label8.Text = ex.ToString();
-        //        //Response.Write(ex);
-        //        Page.MaintainScrollPositionOnPostBack = true;
-        //    }
-        //}
-
-        //#region Gestiones
-        //protected void historial_gestiones(object sender, EventArgs e)
-        //{
-        //    string idFactura = TextBox5.Text;
-        //    Response.Redirect("historial_gestiones.aspx?idFactura=" + idFactura.ToString());
-        //}
-        //#endregion
-
-        public void logout(object sender, EventArgs e)
-        {
-            FormsAuthentication.SignOut();
-            //FormsAuthentication.RedirectToLoginPage();
-            Response.Write("<script language=javascript>window.close();</script>");
-        }
-
+      
     }
 }

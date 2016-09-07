@@ -55,7 +55,7 @@
                             <tbody>
                                 <tr class="danger">
                                     <td>
-                                        <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox></td>
+                                        <asp:TextBox ID="TextBox6" runat="server" Width="200px"></asp:TextBox></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -73,15 +73,15 @@
                             <tbody>
                                 <tr class="danger">
                                     <td>
-                                        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox></td>
+                                        <asp:TextBox ID="TextBox1" runat="server" Width="200px"></asp:TextBox></td>
                                     <td>
-                                        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox></td>
+                                        <asp:TextBox ID="TextBox2" runat="server" Width="200px"></asp:TextBox></td>
                                     <td>
-                                        <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox></td>
+                                        <asp:TextBox ID="TextBox3" runat="server" Width="200px"></asp:TextBox></td>
                                     <td>
-                                        <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox></td>
+                                        <asp:TextBox ID="TextBox4" runat="server" Width="200px"></asp:TextBox></td>
                                     <td>
-                                        <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox></td>
+                                        <asp:TextBox ID="TextBox5" runat="server" Width="200px"></asp:TextBox></td>
                                 </tr>
                             </tbody>
                         </table>

@@ -13,7 +13,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>gescob</title>
     <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
-
     <!-- Bootstrap 3.2.0 stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <!-- Font Awesome Icon stylesheet -->
@@ -42,7 +41,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" runat="server" href="">gescob</a>
+                        <a class="navbar-brand" runat="server">gescob</a>
 
 
                         <div class="navbar-collapse collapse">
@@ -53,12 +52,16 @@
                                 <li><a runat="server" href="~/gestiones.aspx">Gestiones</a></li>
                                 <li><a runat="server" href="~/reportes.aspx">Reportes</a></li>
                             </ul>
+
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="#"><span class="glyphicon glyphicon-user"></span>Cuenta</a></li>
+                                <li><asp:LinkButton ID="LinkButton1" runat="server" OnClick="logout"><span class="glyphicon glyphicon-log-in"></span> Salir</asp:LinkButton></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- ====== End MENU ====== -->
 
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
@@ -75,7 +78,6 @@
                 </div>
             </div>
         </section>
-        <!-- ====== End Copyright Section ====== -->
 
         <!-- jQuery -->
         <script src="http://code.jquery.com/jquery.min.js"></script>
