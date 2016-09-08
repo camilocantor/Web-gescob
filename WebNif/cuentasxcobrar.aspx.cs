@@ -37,12 +37,31 @@ namespace WebNif
         {
             string idfactura = TextBox1.Text;
 
-            Conexion cn = new Conexion();
-            string sql = "select IDFACTURA, IDCLIENTE, FECHAFACTURA, MONTO, SALDO, TIPOPAGO, VENCIMIENTO, ESTADO, ADJUNTO from gc_facturas where idfactura=" + idfactura;
-            dt = (DataTable)cn.Query(sql, Conexion.TipoDato.Table);
-            GridView1.DataSource = dt;
-            GridView1.DataBind();
+            if (idfactura == "")
+            {
+                //lblModalTitle.Text = "El campo IDFactura no puede estar vacío";
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
+            }
 
+            else
+            {          
+                Conexion cn = new Conexion();
+                string sql = "select IDFACTURA, IDCLIENTE, FECHAFACTURA, MONTO, SALDO, TIPOPAGO, VENCIMIENTO, ESTADO, ADJUNTO from gc_facturas where idfactura=" + idfactura;
+                dt = (DataTable)cn.Query(sql, Conexion.TipoDato.Table);
+
+                if (dt.Rows.Count == 0)
+                {
+                    //lblModalTitle.Text = "El campo IDFactura no existe";
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
+                }
+
+                else
+                {
+                    GridView1.DataSource = dt;
+                    GridView1.DataBind();
+                }
+            }
+        
             Page.MaintainScrollPositionOnPostBack = true;
         }
 
@@ -50,12 +69,30 @@ namespace WebNif
         {
             string idcliente = TextBox2.Text;
 
-            Conexion cn = new Conexion();
-            string sql = "select IDFACTURA, IDCLIENTE, FECHAFACTURA, MONTO, SALDO, TIPOPAGO, VENCIMIENTO, ESTADO, ADJUNTO from gc_facturas where idcliente=" + idcliente + "order by idfactura";
-            dt = (DataTable)cn.Query(sql, Conexion.TipoDato.Table);
-            GridView1.DataSource = dt;
-            GridView1.DataBind();
+            if (idcliente == "")
+            {
+                //lblModalTitle.Text = "El campo IDCliente no puede estar vacío";
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
+            }
 
+            else
+            {
+                Conexion cn = new Conexion();
+                string sql = "select IDFACTURA, IDCLIENTE, FECHAFACTURA, MONTO, SALDO, TIPOPAGO, VENCIMIENTO, ESTADO, ADJUNTO from gc_facturas where idcliente=" + idcliente + "order by idfactura";
+                dt = (DataTable)cn.Query(sql, Conexion.TipoDato.Table);
+
+                if (dt.Rows.Count == 0)
+                {
+                    //lblModalTitle.Text = "El campo IDCliente no existe";
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
+                }
+
+                else
+                {
+                    GridView1.DataSource = dt;
+                    GridView1.DataBind();
+                }
+            }
             Page.MaintainScrollPositionOnPostBack = true;
         }
 

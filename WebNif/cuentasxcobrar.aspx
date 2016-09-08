@@ -9,7 +9,8 @@
                 <div class="header">
                     <h1><strong>C</strong>uentas por <strong>C</strong>obrar</h1>
                     <br />
-                    <p>Crédito que la empresa concede a sus clientes a través de una cuenta abierta en el curso ordinario de un negocio, como resultado de la entrega de artículos o servicios.
+                    <p>
+                        Crédito que la empresa concede a sus clientes a través de una cuenta abierta en el curso ordinario de un negocio, como resultado de la entrega de artículos o servicios.
                         Las cuentas por cobrar se consideran como parte del activo circulante de la empresa, por lo que se presta muchísima atención a la administración eficiente de las mismas.
                     </p>
                     <div class="underline">
@@ -109,6 +110,26 @@
             </div>
         </div>
     </section>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" style="color: blue">Mensaje de Error!</h4>
+                </div>
+                <div class="modal-body">
+                    <asp:Label ID="lblModalTitle" runat="server"></asp:Label>
+                </div>
+                <div class="modal-footer">
+                    <asp:Button ID="Button5" CssClass="btn btn-default" runat="server" Text="Cerrar" Width="100px" />
+                </div>
+            </div>
+
+        </div>
+    </div>
 
 </asp:Content>
 

@@ -46,28 +46,28 @@
                         </h1>
                         <br />
                         <h4 style="text-align: center;">
-                            <span style="color: #660066; text-align: center;">Cliente: 
-                    <asp:Label ID="Label2" runat="server"></asp:Label>
+                            <span style="color: #660066; text-align: center; font-weight: bold">Cliente: 
+                    <asp:Label ID="Label2" runat="server" Font-Bold="false"></asp:Label>
                             </span>
                             <br />
-                            <span style="color: #660066; text-align: center;">Fecha de factura: 
-                    <asp:Label ID="Label3" runat="server"></asp:Label>
+                            <span style="color: #660066; text-align: center; font-weight: bold">Fecha de factura: 
+                    <asp:Label ID="Label3" runat="server" Font-Bold="false"></asp:Label>
                             </span>
                             <br />
-                            <span style="color: #660066; text-align: center;">Fecha de vencimiento: 
-                    <asp:Label ID="Label4" runat="server"></asp:Label>
+                            <span style="color: #660066; text-align: center; font-weight: bold">Fecha de vencimiento: 
+                    <asp:Label ID="Label4" runat="server" Font-Bold="false"></asp:Label>
                             </span>
                             <br />
-                            <span style="color: #660066; text-align: center;">Estado: 
-                    <asp:Label ID="Label5" runat="server"></asp:Label>
+                            <span style="color: #660066; text-align: center; font-weight: bold">Estado: 
+                    <asp:Label ID="Label5" runat="server" Font-Bold="false"></asp:Label>
                             </span>
                             <br />
-                            <span style="color: #660066; text-align: center;">Monto: 
-                    <asp:Label ID="Label6" runat="server"></asp:Label>
+                            <span style="color: #660066; text-align: center; font-weight: bold">Monto: 
+                    <asp:Label ID="Label6" runat="server" Font-Bold="false"></asp:Label>
                             </span>
                             <br />
-                            <span style="color: #660066; text-align: center;">Saldo: 
-                    <asp:Label ID="Label7" runat="server"></asp:Label>
+                            <span style="color: #660066; text-align: center; font-weight: bold">Saldo: 
+                    <asp:Label ID="Label7" runat="server" Font-Bold="false"></asp:Label>
                             </span>
                             <br />
                         </h4>

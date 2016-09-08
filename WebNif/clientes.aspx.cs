@@ -35,27 +35,46 @@ namespace WebNif
 
         protected void cliente(object sender, EventArgs e)
         {
-            MultiView1.ActiveViewIndex = 1;
-
             string idcliente = TextBox1.Text;
 
-            Conexion cn = new Conexion();
-            string sql = "select IDFACTURA, FECHAFACTURA, MONTO, SALDO, VENCIMIENTO, ESTADO from gc_facturas where idcliente=" + idcliente;
-            dt = (DataTable)cn.Query(sql, Conexion.TipoDato.Table);
-            GridView2.DataSource = dt;
-            GridView2.DataBind();
+            if (idcliente == "")
+            {
+                lblModalTitle.Text = "El campo ID Cliente no puede estar vacío";
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
+            }
 
-            Conexion cn1 = new Conexion();
-            string sql1 = "select idcliente, nombre, actividad, email, telefono, direccion, contacto from gc_clientes where idcliente=" + idcliente;
-            DataTable dt1 = (DataTable)cn1.Query(sql1, Conexion.TipoDato.Table);
+            else
+            {
+                Conexion cn = new Conexion();
+                string sql = "select IDFACTURA, FECHAFACTURA, MONTO, SALDO, VENCIMIENTO, ESTADO from gc_facturas where idcliente=" + idcliente;
+                dt = (DataTable)cn.Query(sql, Conexion.TipoDato.Table);
 
-            Label1.Text = dt1.Rows[0][0].ToString();
-            Label2.Text = dt1.Rows[0][1].ToString();
-            Label3.Text = dt1.Rows[0][2].ToString();
-            Label4.Text = dt1.Rows[0][3].ToString();
-            Label5.Text = dt1.Rows[0][4].ToString();
-            Label6.Text = dt1.Rows[0][5].ToString();
-            Label7.Text = dt1.Rows[0][6].ToString();
+                if (dt.Rows.Count == 0)
+                {
+                    lblModalTitle.Text = "El campo IDFactura no existe";
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
+                }
+
+                else
+                {
+                    MultiView1.ActiveViewIndex = 1;
+
+                    GridView2.DataSource = dt;
+                    GridView2.DataBind();
+
+                    Conexion cn1 = new Conexion();
+                    string sql1 = "select idcliente, nombre, actividad, email, telefono, direccion, contacto from gc_clientes where idcliente=" + idcliente;
+                    DataTable dt1 = (DataTable)cn1.Query(sql1, Conexion.TipoDato.Table);
+
+                    Label1.Text = dt1.Rows[0][0].ToString();
+                    Label2.Text = dt1.Rows[0][1].ToString();
+                    Label3.Text = dt1.Rows[0][2].ToString();
+                    Label4.Text = dt1.Rows[0][3].ToString();
+                    Label5.Text = dt1.Rows[0][4].ToString();
+                    Label6.Text = dt1.Rows[0][5].ToString();
+                    Label7.Text = dt1.Rows[0][6].ToString();                  
+                }
+            }
 
             Page.MaintainScrollPositionOnPostBack = true;
         }

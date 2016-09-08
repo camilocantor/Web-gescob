@@ -1,6 +1,6 @@
 /* =========================================
-Theme Name: Akshara App 
-Author URI: http://aspxtemplates.com/
+Theme Name: gescob
+Author: aletrujim
 ========================================= */
 
 
@@ -150,7 +150,7 @@ textarea:focus {
 }
 
 /*===============================
- Icons 
+ Iconos 
 ====================================*/
 
 .bg-color ul.social-network
@@ -261,7 +261,7 @@ textarea:focus {
 
 
 /* =========================================
-Section Header                 
+ Header - contenido                 
 ========================================= */
 header
 {
@@ -316,10 +316,8 @@ header
 }
 
 
-
-
 /* =========================================
-Section Menu                 
+ Menu                 
 ========================================= */
 .navigation {
 	min-height: 70px;
@@ -377,9 +375,34 @@ h1 i
     color: #33033d;
 }
 
+/* =========================================
+ Dropdown cuenta                 
+========================================= */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 
 /* =========================================
-Section Features                 
+       OTROS                 
+========================================= */
+
+/* =========================================
+ Section Features                 
 ========================================= */
 .features .featured-item-img {
 	width: 252px;
@@ -596,6 +619,7 @@ Section Description
 .description .content .list-item li{
 	margin-bottom: 15px;
 }
+
 /* =========================================
 Section Testimonial                 
 ========================================= */
@@ -1004,3 +1028,4 @@ Section Footer
     color: #FF93FF;
     font-weight: bold;
 }
+

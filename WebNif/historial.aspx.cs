@@ -23,12 +23,26 @@ namespace WebNif
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                // drop clientes
+                Conexion cn = new Conexion();
+                string sql = "select distinct to_char(periodicidad, 'dd/mm/yyyy') periodicidad from gc_facturas";
+                DataTable dt = (DataTable)cn.Query(sql, Conexion.TipoDato.Table);
+
+                DropDownList1.DataSource = dt;
+                DropDownList1.DataTextField = "periodicidad";
+                DropDownList1.DataValueField = "periodicidad";
+                DropDownList1.DataBind();
+            }
+
             Page.MaintainScrollPositionOnPostBack = true;
         }
 
         protected void periodicidad(object sender, EventArgs e)
         {
-            string periodicidad = TextBox1.Text;
+            DateTime per = Convert.ToDateTime(DropDownList1.SelectedItem.Text);
+            string periodicidad = per.ToString("dd/MM/yyyy");
 
             Conexion cn = new Conexion();
             string sql = "select IDFACTURA, IDCLIENTE, FECHAFACTURA, MONTO, SALDO, TIPOPAGO, VENCIMIENTO, ESTADO, ADJUNTO from gc_facturas where periodicidad='"+ periodicidad +"' order by VENCIMIENTO";

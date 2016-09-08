@@ -124,4 +124,24 @@
         </div>
     </section>
 
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" style="color: blue">Mensaje de Error!</h4>
+                </div>
+                <div class="modal-body">
+                    <asp:Label ID="lblModalTitle" runat="server"></asp:Label>
+                </div>
+                <div class="modal-footer">
+                    <asp:Button ID="Button5" CssClass="btn btn-default" runat="server" Text="Cerrar" Width="100px" />
+                </div>
+            </div>
+
+        </div>
+    </div>
+
 </asp:Content>

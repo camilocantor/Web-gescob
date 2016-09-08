@@ -54,8 +54,26 @@
                             </ul>
 
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a href="#"><span class="glyphicon glyphicon-user"></span>Cuenta</a></li>
-                                <li><asp:LinkButton ID="LinkButton1" runat="server" OnClick="logout"><span class="glyphicon glyphicon-log-in"></span> Salir</asp:LinkButton></li>
+                                <%--<li><a><span class="glyphicon glyphicon-user"></span>Cuenta</a></li>--%>
+                                <li>
+                                    <br />
+                                    <div class="dropdown">
+                                        <a style="color: white"><span class="glyphicon glyphicon-user"></span>Cuenta</a>
+                                        <div class="dropdown-content">
+                                            <p>
+                                                ID Usuario: xxxxx
+                                                Nombre del usuario
+                                                correousuarios@correo.com
+                                                tipo de usuario
+                                            </p>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <asp:LinkButton ID="LinkButton1" runat="server" OnClick="logout"><span class="glyphicon glyphicon-log-in">
+                                      </span> Salir</asp:LinkButton>
+                                </li>
                             </ul>
                         </div>
                     </div>
