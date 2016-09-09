@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gescob", "WebNif\Gescob.csproj", "{E72E6F9B-F26D-45E2-8794-D760CEC227CF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gescob", "Webgescob\Gescob.csproj", "{E72E6F9B-F26D-45E2-8794-D760CEC227CF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLib", "DataLib\DataLib.csproj", "{FDFB1C41-0104-4AA4-AE3E-42F1DDFF2F0F}"
 EndProject
