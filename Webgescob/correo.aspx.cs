@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 using System.Data;
 using DataLib;
-using System.Net;
 using System.Net.Mail;
-using System.Web.Security;
 using System.IO;
 
 namespace WebNif
@@ -19,7 +13,7 @@ namespace WebNif
         {
             if (!IsPostBack)
             {
-                // drop clientes
+                // drop cl
                 Conexion cnc = new Conexion();
                 string sqlc = "select nombre, email from gc_clientes order by idcliente";
                 DataTable dtc = (DataTable)cnc.Query(sqlc, Conexion.TipoDato.Table);
@@ -69,8 +63,8 @@ namespace WebNif
             System.Net.Mail.MailMessage mmsg = new System.Net.Mail.MailMessage();
 
             //Direccion de correo electronico a la que queremos enviar el mensaje
-            string destinatario = Email.Text;
-            mmsg.To.Add(destinatario); // To es una colección que permite enviar el mensaje a más de un destinatario
+            string dest = Email.Text;
+            mmsg.To.Add(dest); // To es una colección que permite enviar el mensaje a más de un destinatario
 
             //Asunto
             mmsg.Subject = Asunto.Text;

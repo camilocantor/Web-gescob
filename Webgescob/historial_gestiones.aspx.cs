@@ -18,23 +18,23 @@ namespace WebNif
         {
             if (!Page.IsPostBack)
             {
-                int idFactura = Convert.ToInt32(Request["idFactura"]); // Obtiene obj
+                int idFac = Convert.ToInt32(Request["idFactura"]); // Obtiene obj
 
                 Conexion cn0 = new Conexion();
-                string sql0 = "select IDCLIENTE from gc_facturas where idfactura="+ idFactura;
+                string sql0 = "select IDCLIENTE from gc_facturas where idfactura="+ idFac;
                 DataTable dt0 = (DataTable)cn0.Query(sql0, Conexion.TipoDato.Table);
-                string idCliente = dt0.Rows[0][0].ToString();
+                string idCl = dt0.Rows[0][0].ToString();
 
                 Conexion cn01 = new Conexion();
-                string sql01 = "select nombre from gc_clientes where idCliente=" + idCliente;
+                string sql01 = "select nombre from gc_clientes where idCliente=" + idCl;
                 DataTable dt01 = (DataTable)cn01.Query(sql01, Conexion.TipoDato.Table);
                 string nombre = dt01.Rows[0][0].ToString();
 
                 Conexion cn1 = new Conexion();
-                string sql1 = "select idfactura, idcliente, fechafactura, vencimiento, estado, monto, saldo from gc_facturas where idcliente=" + idCliente;
+                string sql1 = "select idfactura, idcliente, fechafactura, vencimiento, estado, monto, saldo from gc_facturas where idcliente=" + idCl;
                 DataTable dt1 = (DataTable)cn1.Query(sql1, Conexion.TipoDato.Table);
 
-                Label1.Text = idFactura.ToString();
+                Label1.Text = idFac.ToString();
                 Label2.Text = dt1.Rows[0][1].ToString() + " " + nombre;
 
                 DateTime fechafac = Convert.ToDateTime(dt1.Rows[0][2].ToString());
@@ -50,7 +50,7 @@ namespace WebNif
                 Label7.Text = dt1.Rows[0][6].ToString(); 
 
                 Conexion cn = new Conexion();
-                string sql = "select idfactura, fechagestion, seguimiento, estado, adjunto, idusuario from gc_gestiones where idfactura=" + idFactura + " order by fechagestion";
+                string sql = "select idfactura, fechagestion, seguimiento, estado, adjunto, idusuario from gc_gestiones where idfactura=" + idFac + " order by fechagestion";
                 dt = (DataTable)cn.Query(sql, Conexion.TipoDato.Table);
                 GridView1.DataSource = dt;
                 GridView1.DataBind();
@@ -62,7 +62,7 @@ namespace WebNif
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             int pos = Convert.ToInt32(e.CommandArgument);
-            string idFactura = dt.Rows[pos][0].ToString();
+            string idFac = dt.Rows[pos][0].ToString();
 
             if (e.CommandName == "adjunto")
             {

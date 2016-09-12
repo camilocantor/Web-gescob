@@ -2,7 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <section id="cuentasporcobrar">
+    <section id="cxc">
         <div class="features section-padding">
             <div class="container">
 
@@ -39,7 +39,7 @@
                                         <div class="meta-text">
                                             <h3>IDFactura: </h3>
                                             <asp:TextBox ID="TextBox1" runat="server" Width="200px"></asp:TextBox>
-                                            <asp:Button ID="Button1" runat="server" Text="Buscar" OnClick="buscar_factura" BackColor="White" Width="200px" />
+                                            <asp:Button ID="Button1" runat="server" Text="Buscar" OnClick="bfac" BackColor="White" Width="200px" />
                                         </div>
                                         <asp:Panel ID="Panel2" runat="server" Width="299px" Height="64px"></asp:Panel>
 
@@ -49,7 +49,7 @@
                                         <div class="meta-text">
                                             <h3>IDCliente: </h3>
                                             <asp:TextBox ID="TextBox2" runat="server" Width="200px"></asp:TextBox>
-                                            <asp:Button ID="Button2" runat="server" Text="Buscar" OnClick="buscar_cliente" BackColor="White" Width="200px" />
+                                            <asp:Button ID="Button2" runat="server" Text="Buscar" OnClick="bcl" BackColor="White" Width="200px" />
                                         </div>
                                         <asp:Panel ID="Panel3" runat="server" Width="299px" Height="64px"></asp:Panel>
 
@@ -58,7 +58,7 @@
                                         </div>
                                         <div class="meta-text">
                                             <h3>Facturas vencidas </h3>
-                                            <asp:Button ID="Button3" runat="server" Text="Buscar" OnClick="buscar_vencidas" BackColor="White" Width="200px" />
+                                            <asp:Button ID="Button3" runat="server" Text="Buscar" OnClick="bvenc" BackColor="White" Width="200px" />
                                         </div>
                                         <asp:Panel ID="Panel4" runat="server" Width="299px" Height="64px"></asp:Panel>
 
@@ -67,7 +67,7 @@
                                         </div>
                                         <div class="meta-text">
                                             <h3>Todas Facturas </h3>
-                                            <asp:Button ID="Button4" runat="server" Text="Buscar" OnClick="buscar_todas" BackColor="White" Width="200px" />
+                                            <asp:Button ID="Button4" runat="server" Text="Buscar" OnClick="bts" BackColor="White" Width="200px" />
                                         </div>
 
                                     </div>

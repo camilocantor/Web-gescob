@@ -1,15 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using DataLib;
-using System.Web.UI.DataVisualization.Charting;
-using System.Net;
-using System.Net.Mail;
-using System.Web.Security;
 
 namespace WebNif
 {
@@ -21,7 +14,6 @@ namespace WebNif
         {
             if (!Page.IsPostBack)
             {
-                // Grilla inicial clientes
                 Conexion cnc = new Conexion();
                 string sqlc = "select idcliente, nombre, actividad, email, telefono, direccion, contacto from gc_clientes where idcliente > 0 order by idcliente";
                 DataTable dtc = (DataTable)cnc.Query(sqlc, Conexion.TipoDato.Table);
@@ -35,9 +27,9 @@ namespace WebNif
 
         protected void cliente(object sender, EventArgs e)
         {
-            string idcliente = TextBox1.Text;
+            string idcl = TextBox1.Text;
 
-            if (idcliente == "")
+            if (idcl == "")
             {
                 lblModalTitle.Text = "El campo ID Cliente no puede estar vacío";
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
@@ -46,7 +38,7 @@ namespace WebNif
             else
             {
                 Conexion cn = new Conexion();
-                string sql = "select IDFACTURA, FECHAFACTURA, MONTO, SALDO, VENCIMIENTO, ESTADO from gc_facturas where idcliente=" + idcliente;
+                string sql = "select IDFACTURA, FECHAFACTURA, MONTO, SALDO, VENCIMIENTO, ESTADO from gc_facturas where idcliente=" + idcl;
                 dt = (DataTable)cn.Query(sql, Conexion.TipoDato.Table);
 
                 if (dt.Rows.Count == 0)
@@ -63,7 +55,7 @@ namespace WebNif
                     GridView2.DataBind();
 
                     Conexion cn1 = new Conexion();
-                    string sql1 = "select idcliente, nombre, actividad, email, telefono, direccion, contacto from gc_clientes where idcliente=" + idcliente;
+                    string sql1 = "select idcliente, nombre, actividad, email, telefono, direccion, contacto from gc_clientes where idcliente=" + idcl;
                     DataTable dt1 = (DataTable)cn1.Query(sql1, Conexion.TipoDato.Table);
 
                     Label1.Text = dt1.Rows[0][0].ToString();
@@ -83,17 +75,17 @@ namespace WebNif
         protected void GridView2_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             int pos = Convert.ToInt32(e.CommandArgument);
-            string idFactura = dt.Rows[pos][0].ToString();
+            string idFac = dt.Rows[pos][0].ToString();
 
             if (e.CommandName == "historial_pagos")
             {
-                Response.Redirect("historial_pagos.aspx?idFactura=" + idFactura.ToString());
+                Response.Redirect("historial_pagos.aspx?idFactura=" + idFac.ToString());
             }
 
 
             if (e.CommandName == "historial_gestiones")
             {
-                Response.Redirect("historial_gestiones.aspx?idFactura=" + idFactura.ToString());
+                Response.Redirect("historial_gestiones.aspx?idFactura=" + idFac.ToString());
             }
 
         }

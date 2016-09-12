@@ -37,7 +37,7 @@
 <body>
     <form id="form1" runat="server">
 
-        <section id="historialfactura">
+        <section id="histpag">
             <div class="features section-padding">
                 <div class="container">
                     <div class="header">

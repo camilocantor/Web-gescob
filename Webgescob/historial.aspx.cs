@@ -1,21 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using System.Data;
 using DataLib;
-using System.Web.UI.DataVisualization.Charting;
-using System.Net;
-using System.Net.Mail;
-    using System.Web.Security;
 
 namespace WebNif
 {
@@ -25,7 +11,6 @@ namespace WebNif
         {
             if (!IsPostBack)
             {
-                // drop clientes
                 Conexion cn = new Conexion();
                 string sql = "select distinct to_char(periodicidad, 'dd/mm/yyyy') periodicidad from gc_facturas";
                 DataTable dt = (DataTable)cn.Query(sql, Conexion.TipoDato.Table);
@@ -42,10 +27,10 @@ namespace WebNif
         protected void periodicidad(object sender, EventArgs e)
         {
             DateTime per = Convert.ToDateTime(DropDownList1.SelectedItem.Text);
-            string periodicidad = per.ToString("dd/MM/yyyy");
+            string period = per.ToString("dd/MM/yyyy");
 
             Conexion cn = new Conexion();
-            string sql = "select IDFACTURA, IDCLIENTE, FECHAFACTURA, MONTO, SALDO, TIPOPAGO, VENCIMIENTO, ESTADO, ADJUNTO from gc_facturas where periodicidad='"+ periodicidad +"' order by VENCIMIENTO";
+            string sql = "select IDFACTURA, IDCLIENTE, FECHAFACTURA, MONTO, SALDO, TIPOPAGO, VENCIMIENTO, ESTADO, ADJUNTO from gc_facturas where periodicidad='"+ period + "' order by VENCIMIENTO";
             DataTable dt = (DataTable)cn.Query(sql, Conexion.TipoDato.Table);
             GridView1.DataSource = dt;
             GridView1.DataBind();

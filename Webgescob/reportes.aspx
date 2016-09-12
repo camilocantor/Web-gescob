@@ -4,7 +4,7 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
  <!-- ====== REPORTES ====== -->
-    <section id="reportes">
+    <section id="rep">
         <div class="price section-padding dark-bg">
             <div class="container">
 

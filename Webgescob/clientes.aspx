@@ -2,7 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <section id="clientes">
+    <section id="cl">
         <div class="features section-padding">
             <div class="container">
                 <div class="header">
@@ -16,7 +16,7 @@
 
                     <div class="meta-text">
                         <h3>ID Cliente: 
-                                 <asp:TextBox ID="TextBox1" runat="server" Width="180px"></asp:TextBox>
+                                 <asp:TextBox ID="TextBox1" runat="server" Width="180px" ></asp:TextBox>
                             <asp:Button ID="Button1" runat="server" Text="Buscar" OnClick="cliente" BackColor="White" Width="180px" />
                         </h3>
                     </div>

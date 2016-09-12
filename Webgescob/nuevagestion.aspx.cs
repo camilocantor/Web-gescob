@@ -22,20 +22,20 @@ namespace WebNif
 
         protected void nuevo(object sender, EventArgs e)
         {
-            int idfactura = Convert.ToInt32(TextBox1.Text);
-            string fechagestion = TextBox2.Text;
-            string seguimiento = TextBox3.Text;
-            string estado = TextBox4.Text;
-            string adjunto = TextBox5.Text;
-            int idusuario = Convert.ToInt32(TextBox6.Text);
+            int idfac = Convert.ToInt32(TextBox1.Text);
+            string fechagest = TextBox2.Text;
+            string seguim = TextBox3.Text;
+            string est = TextBox4.Text;
+            string adj = TextBox5.Text;
+            int idus = Convert.ToInt32(TextBox6.Text);
 
             Conexion cn = new Conexion();
-            string sql = "insert INTO gc_gestiones (idfactura, fechagestion, seguimiento, estado, adjunto, idusuario) VALUES (" + idfactura  + ", '" + fechagestion +"', '"+ seguimiento +"', '"+ estado +"', '"+ adjunto +"', "+ idusuario+") ";
+            string sql = "insert INTO gc_gestiones (idfactura, fechagestion, seguimiento, estado, adjunto, idusuario) VALUES (" + idfac  + ", '" + fechagest +"', '"+ seguim +"', '"+ est +"', '"+ adj +"', "+ idus +") ";
             cn.Query(sql);
 
             //para actualizar el grid
             Conexion cn1 = new Conexion();
-            string sql1 = "select IDFACTURA, FECHAGESTION, SEGUIMIENTO, ESTADO, ADJUNTO, IDUSUARIO from gc_gestiones where idfactura="+ idfactura +" order by idfactura ";
+            string sql1 = "select IDFACTURA, FECHAGESTION, SEGUIMIENTO, ESTADO, ADJUNTO, IDUSUARIO from gc_gestiones where idfactura="+ idfac +" order by idfactura ";
             DataTable dt1 = (DataTable)cn1.Query(sql1, Conexion.TipoDato.Table);
             GridView1.DataSource = dt1;
             GridView1.DataBind();

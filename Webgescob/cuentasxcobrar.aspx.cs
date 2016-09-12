@@ -1,15 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using DataLib;
-using System.Web.UI.DataVisualization.Charting;
-using System.Net;
-using System.Net.Mail;
-using System.Web.Security;
 
 namespace WebNif
 {
@@ -21,7 +14,6 @@ namespace WebNif
         {
             if (!Page.IsPostBack)
             {
-                // Grilla inicial cuentas por cobrar
                 Conexion cn = new Conexion();
                 string sql = "select IDFACTURA, IDCLIENTE, FECHAFACTURA, MONTO, SALDO, TIPOPAGO, VENCIMIENTO, ESTADO from gc_facturas order by vencimiento";
                 dt = (DataTable)cn.Query(sql, Conexion.TipoDato.Table);
@@ -33,11 +25,11 @@ namespace WebNif
 
         }
 
-        protected void buscar_factura(object sender, EventArgs e)
+        protected void bfac(object sender, EventArgs e)
         {
-            string idfactura = TextBox1.Text;
+            string idfac = TextBox1.Text;
 
-            if (idfactura == "")
+            if (idfac == "")
             {
                 //lblModalTitle.Text = "El campo IDFactura no puede estar vacío";
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
@@ -46,7 +38,7 @@ namespace WebNif
             else
             {          
                 Conexion cn = new Conexion();
-                string sql = "select IDFACTURA, IDCLIENTE, FECHAFACTURA, MONTO, SALDO, TIPOPAGO, VENCIMIENTO, ESTADO, ADJUNTO from gc_facturas where idfactura=" + idfactura;
+                string sql = "select IDFACTURA, IDCLIENTE, FECHAFACTURA, MONTO, SALDO, TIPOPAGO, VENCIMIENTO, ESTADO, ADJUNTO from gc_facturas where idfactura=" + idfac;
                 dt = (DataTable)cn.Query(sql, Conexion.TipoDato.Table);
 
                 if (dt.Rows.Count == 0)
@@ -65,11 +57,11 @@ namespace WebNif
             Page.MaintainScrollPositionOnPostBack = true;
         }
 
-        protected void buscar_cliente(object sender, EventArgs e)
+        protected void bcl(object sender, EventArgs e)
         {
-            string idcliente = TextBox2.Text;
+            string idcl = TextBox2.Text;
 
-            if (idcliente == "")
+            if (idcl== "")
             {
                 //lblModalTitle.Text = "El campo IDCliente no puede estar vacío";
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
@@ -78,7 +70,7 @@ namespace WebNif
             else
             {
                 Conexion cn = new Conexion();
-                string sql = "select IDFACTURA, IDCLIENTE, FECHAFACTURA, MONTO, SALDO, TIPOPAGO, VENCIMIENTO, ESTADO, ADJUNTO from gc_facturas where idcliente=" + idcliente + "order by idfactura";
+                string sql = "select IDFACTURA, IDCLIENTE, FECHAFACTURA, MONTO, SALDO, TIPOPAGO, VENCIMIENTO, ESTADO, ADJUNTO from gc_facturas where idcliente=" + idcl + "order by idfactura";
                 dt = (DataTable)cn.Query(sql, Conexion.TipoDato.Table);
 
                 if (dt.Rows.Count == 0)
@@ -96,7 +88,7 @@ namespace WebNif
             Page.MaintainScrollPositionOnPostBack = true;
         }
 
-        protected void buscar_vencidas(object sender, EventArgs e)
+        protected void bvenc(object sender, EventArgs e)
         {
             Conexion cn = new Conexion();
             string sql = "select IDFACTURA, IDCLIENTE, FECHAFACTURA, MONTO, SALDO, TIPOPAGO, VENCIMIENTO, ESTADO, ADJUNTO from gc_facturas where estado='DEUDA VENCIDA' order by VENCIMIENTO";
@@ -107,7 +99,7 @@ namespace WebNif
             Page.MaintainScrollPositionOnPostBack = true;
         }
 
-        protected void buscar_todas(object sender, EventArgs e)
+        protected void bts(object sender, EventArgs e)
         {
             Conexion cn = new Conexion();
             string sql = "select IDFACTURA, IDCLIENTE, FECHAFACTURA, MONTO, SALDO, TIPOPAGO, VENCIMIENTO, ESTADO, ADJUNTO from gc_facturas order by VENCIMIENTO";
@@ -122,16 +114,16 @@ namespace WebNif
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             int pos = Convert.ToInt32(e.CommandArgument);
-            string idFactura = dt.Rows[pos][0].ToString();
+            string idFac = dt.Rows[pos][0].ToString();
 
             if (e.CommandName == "historial_pagos")
             {
-                Response.Redirect("historial_pagos.aspx?idFactura=" + idFactura.ToString());
+                Response.Redirect("historial_pagos.aspx?idFactura=" + idFac.ToString());
             }
 
             if (e.CommandName == "historial_gestiones")
             {
-                Response.Redirect("historial_gestiones.aspx?idFactura=" + idFactura.ToString());
+                Response.Redirect("historial_gestiones.aspx?idFactura=" + idFac.ToString());
             }
 
 

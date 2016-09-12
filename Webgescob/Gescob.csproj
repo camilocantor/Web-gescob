@@ -139,6 +139,12 @@
     <Content Include="images\duel-phone-big.png" />
     <Content Include="images\fondoWeb.jpg" />
     <Content Include="images\foto.png" />
+    <Content Include="images\im1.png" />
+    <Content Include="images\im2.png" />
+    <Content Include="images\im3.png" />
+    <Content Include="images\im4.png" />
+    <Content Include="images\im5.png" />
+    <Content Include="images\ims2.jpg" />
     <Content Include="images\negro.jpg" />
     <Content Include="images\niif-informacion-global.jpg" />
     <Content Include="images\pattern-1.png" />
@@ -147,6 +153,7 @@
     <Content Include="images\phone3.png" />
     <Content Include="images\slide_desarrollo.png" />
     <Content Include="images\thumb400_noticia-cloud-computing-tiendacloud-fondo.jpg" />
+    <Content Include="in.aspx" />
     <Content Include="index.aspx" />
     <Content Include="iniciarsesion.aspx" />
     <Content Include="inicio.aspx" />
@@ -247,6 +254,13 @@
     </Compile>
     <Compile Include="historial_pagos.aspx.designer.cs">
       <DependentUpon>historial_pagos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="in.aspx.cs">
+      <DependentUpon>in.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="in.aspx.designer.cs">
+      <DependentUpon>in.aspx</DependentUpon>
     </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>

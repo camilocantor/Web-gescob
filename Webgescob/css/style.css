@@ -265,7 +265,7 @@ textarea:focus {
 ========================================= */
 header
 {
-    background: url('../images/negro.jpg') no-repeat fixed 50% 0;
+    background: url('../images/ims2.jpg') no-repeat fixed 50% 0;
     background-size: cover;
 }
 .top .photo-slide {
@@ -486,6 +486,8 @@ h1 i
 	margin-top: 25px;
 	text-align: center;
 }
+
+
 
 
 /* Styling Next and Prev buttons */

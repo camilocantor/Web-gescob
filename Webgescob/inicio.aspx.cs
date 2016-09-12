@@ -1,25 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 using System.Data;
 using DataLib;
 using System.Web.UI.DataVisualization.Charting;
-using System.Net;
-using System.Net.Mail;
-using System.Web.Security;
 
 namespace WebNif
 {
     public partial class inicio : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
             {
-                int idUsuario = Convert.ToInt32(Request["idUsuario"]); // Obtiene obj
+               //int idUsuario = Convert.ToInt32(Request["idUsuario"]); // Obtiene obj
             }
 
             graficos_inicio();
