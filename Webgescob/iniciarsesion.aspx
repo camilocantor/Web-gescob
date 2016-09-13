@@ -54,7 +54,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading panel-heading-custom">
                             <div class="panel-title">
-                                <h4><strong>I</strong>niciar <strong>S</strong>esión lLlldgdfhdfhgll</h4>
+                                <h4><strong>I</strong>niciar <strong>S</strong>esión</h4>
                             </div>
                         </div>
                         <div style="padding-top: 30px" class="panel-body">

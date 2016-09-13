@@ -43,7 +43,7 @@ namespace WebNif
 
                 if (dt.Rows.Count == 0)
                 {
-                    //lblModalTitle.Text = "El campo IDFactura no existe";
+                    lblModalTitle.Text = "El campo IDFactura no existe";
                     ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
                 }
 
@@ -75,7 +75,7 @@ namespace WebNif
 
                 if (dt.Rows.Count == 0)
                 {
-                    //lblModalTitle.Text = "El campo IDCliente no existe";
+                    lblModalTitle.Text = "El campo IDCliente no existe";
                     ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
                 }
 

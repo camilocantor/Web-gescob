@@ -111,7 +111,7 @@
         </div>
 
         <!-- Modal -->
-        <div class="modal fade" id="myModal" role="dialog" runat="server">
+        <div class="modal fade" id="myModal" role="dialog">
             <div class="modal-dialog">
                 <!-- Modal content-->
                 <div class="modal-content">
@@ -120,12 +120,12 @@
                     </div>
                     <div class="modal-body">
                         <asp:Label ID="lblModalTitle" runat="server"></asp:Label>
-                        <asp:Label ID="Label1" runat="server"></asp:Label>
                     </div>
                     <div class="modal-footer">
                         <asp:Button ID="Button5" CssClass="btn btn-default" runat="server" Text="Cerrar" Width="100px" />
                     </div>
                 </div>
+
             </div>
         </div>
 
