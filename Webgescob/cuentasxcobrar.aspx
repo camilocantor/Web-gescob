@@ -7,7 +7,7 @@
             <div class="container">
 
                 <div class="header">
-                    <h1><strong>C</strong>uentas alejitaddddd</h1>
+                    <h1><strong>C</strong>uentas alejitaddddd alejitaddddd</h1>
                     <br />
                     <p>
                         Crédito que la empresa concede a sus clientes a través de una cuenta abierta en el curso ordinario de un negocio, como resultado de la entrega de artículos o servicios.
