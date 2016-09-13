@@ -2,7 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <section id="cl">
+    <section id="clientes">
         <div class="features section-padding">
             <div class="container">
                 <div class="header">
@@ -16,7 +16,7 @@
 
                     <div class="meta-text">
                         <h3>ID Cliente: 
-                                 <asp:TextBox ID="TextBox1" runat="server" Width="180px" ></asp:TextBox>
+                                 <asp:TextBox ID="TextBox1" runat="server" Width="180px"></asp:TextBox>
                             <asp:Button ID="Button1" runat="server" Text="Buscar" OnClick="cliente" BackColor="White" Width="180px" />
                         </h3>
                     </div>
@@ -58,7 +58,7 @@
                             <div class="featured-item">
                                 <asp:Panel ID="Panel2" runat="server" HorizontalAlign="Center">
                                     <h4 style="text-align: center;">
-                                        <span style="color: #660066; text-align: center; font-weight: bold">Id Cliente 
+                                        <span style="color: #660066; text-align: center; font-weight: bold">ID Cliente 
                     <asp:Label ID="Label1" runat="server" Font-Bold="false"></asp:Label>
                                         </span>
                                         <br />
@@ -70,7 +70,7 @@
                     <asp:Label ID="Label3" runat="server" Font-Bold="false"></asp:Label>
                                         </span>
                                         <br />
-                                        <span style="color: #660066; text-align: center; font-weight: bold">e-mail 
+                                        <span style="color: #660066; text-align: center; font-weight: bold">Email 
                     <asp:Label ID="Label4" runat="server" Font-Bold="false"></asp:Label>
                                         </span>
                                         <br />
@@ -122,26 +122,32 @@
                 </div>
             </div>
         </div>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" style="color: blue">Mensaje de Error!</h4>
+                    </div>
+                    <div class="modal-body">
+                        <asp:Label ID="lblModalTitle" runat="server"></asp:Label>
+                    </div>
+                    <div class="modal-footer">
+                        <asp:Button ID="Button5" CssClass="btn btn-default" runat="server" Text="Cerrar" Width="100px" />
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
     </section>
 
 
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog">
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" style="color: blue">Mensaje de Error!</h4>
-                </div>
-                <div class="modal-body">
-                    <asp:Label ID="lblModalTitle" runat="server"></asp:Label>
-                </div>
-                <div class="modal-footer">
-                    <asp:Button ID="Button5" CssClass="btn btn-default" runat="server" Text="Cerrar" Width="100px" />
-                </div>
-            </div>
 
-        </div>
-    </div>
 
 </asp:Content>

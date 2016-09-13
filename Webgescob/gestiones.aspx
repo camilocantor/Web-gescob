@@ -2,7 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <section id="ges">
+    <section id="gestiones">
         <div class="description">
             <div class="description-one section-padding">
                 <div class="container" runat="server">

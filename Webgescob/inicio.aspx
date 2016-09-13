@@ -2,7 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <header id="ini">
+    <header id="inicio">
         <div class="bg-color">
             <div class="top section-padding">
                 <div class="container">

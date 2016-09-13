@@ -2,7 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-        <section id="nges">
+        <section id="nueva_gest">
             <div class="features section-padding">
                 <div class="container">
                     <div class="header">

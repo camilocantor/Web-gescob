@@ -31,7 +31,7 @@ namespace WebNif
 
             if (idfac == "")
             {
-                //lblModalTitle.Text = "El campo IDFactura no puede estar vacío";
+                lblModalTitle.Text = "El campo IDFactura no puede estar vacío";
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
             }
 
@@ -63,7 +63,7 @@ namespace WebNif
 
             if (idcl== "")
             {
-                //lblModalTitle.Text = "El campo IDCliente no puede estar vacío";
+                lblModalTitle.Text = "El campo IDCliente no puede estar vacío";
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
             }
 

@@ -2,12 +2,12 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <section id="cxc">
+    <section id="cuentasxcobrar">
         <div class="features section-padding">
             <div class="container">
 
                 <div class="header">
-                    <h1><strong>C</strong>uentas por <strong>C</strong>obrar</h1>
+                    <h1><strong>C</strong>uentas</h1>
                     <br />
                     <p>
                         Crédito que la empresa concede a sus clientes a través de una cuenta abierta en el curso ordinario de un negocio, como resultado de la entrega de artículos o servicios.
@@ -109,27 +109,27 @@
                 </div>
             </div>
         </div>
-    </section>
 
-
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog">
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" style="color: blue">Mensaje de Error!</h4>
-                </div>
-                <div class="modal-body">
-                    <asp:Label ID="lblModalTitle" runat="server"></asp:Label>
-                </div>
-                <div class="modal-footer">
-                    <asp:Button ID="Button5" CssClass="btn btn-default" runat="server" Text="Cerrar" Width="100px" />
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog" runat="server">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" style="color: blue">Mensaje de Error!</h4>
+                    </div>
+                    <div class="modal-body">
+                        <asp:Label ID="lblModalTitle" runat="server"></asp:Label>
+                        <asp:Label ID="Label1" runat="server"></asp:Label>
+                    </div>
+                    <div class="modal-footer">
+                        <asp:Button ID="Button5" CssClass="btn btn-default" runat="server" Text="Cerrar" Width="100px" />
+                    </div>
                 </div>
             </div>
-
         </div>
-    </div>
+
+    </section>
 
 </asp:Content>
 
