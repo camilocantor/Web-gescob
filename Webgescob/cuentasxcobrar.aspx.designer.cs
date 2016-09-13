@@ -113,7 +113,5 @@ namespace WebNif {
 
         protected global::System.Web.UI.WebControls.Label lblModalTitle;
 
-
-        
     }
 }
