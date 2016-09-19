@@ -830,11 +830,11 @@ Section Team
 	text-align: center;
 	padding: 60px 0;
 	border-radius: 100%;
-	width: 150px;
+	width: 220px;
 	height: 150px;
 	position: absolute;
 	top: -75px;
-	left: 50%;
+	left: 43%;
 	margin-left: -75px;
 	font-weight: 700;
 }
@@ -1030,4 +1030,7 @@ Section Footer
     color: #FF93FF;
     font-weight: bold;
 }
+
+
+
 
