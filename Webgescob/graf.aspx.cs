@@ -34,6 +34,7 @@ namespace WebNif
             Chart1.ChartAreas["ChartArea1"].Area3DStyle.Enable3D = true;
             Chart1.Titles[0].Text = "Grafico Interes";
             Chart1.Legends[0].Enabled = true;
+            Chart1.Palette = ChartColorPalette.Pastel;
 
 
             // Grafico 2
