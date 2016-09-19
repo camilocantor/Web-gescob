@@ -23,7 +23,7 @@
 
                         <div class="col-md-4">
                             <div class="price-table">
-                                <div class="rate">$000</div>
+                                <div class="rate"><asp:Label ID="Label1" runat="server"></asp:Label></div>
                                 <h2>Texto</h2>
                                 <p>Want more Bootstrap themes & templates? Subscribe to our mailing list to receive an update when new items arrive! </p>
                                 <ul>
@@ -34,7 +34,7 @@
                                     <li><i class="fa fa-times"></i>Texto</li>
                                     <li><i class="fa fa-times"></i>Texto</li>
                                 </ul>
-                                <a href="#download" class="btn btn-default buy-now">Texto</a>
+                                <a runat="server" href="~/reportes.aspx" class="btn btn-default buy-now">Grafica</a>
                             </div>
                         </div>
 
