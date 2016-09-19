@@ -154,7 +154,7 @@ namespace BussinesLayer
 
             var y = -10;
             
-            // series --> DATOS
+            // series --> DATOS 
             javaScript += " series: [";
             foreach (List<PeriodosReporte> lsta_p in listaSeries)
             {

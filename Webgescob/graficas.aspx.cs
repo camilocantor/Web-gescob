@@ -19,7 +19,7 @@ namespace WebNif
             listaSeries.Add(serie);
 
             //PlotArea p = new PlotArea(tpograf, cnsctvo_grfca, nombre, "ElectroHuila S.A E.S.P", null, AnoIni, listaSeries, true, IdIndicador, "Periodo", true, "verGraficaCta.aspx", GRAFICO, symbolo, leyenda_y);
-            // tpograf = 1 column, 2 tort
+            // tpograf = 1 columnas, 2 torta
             PlotArea p = new PlotArea(1, 0, "ROA(%)", "ElectroHuila S.A E.S.P", null, 2016, listaSeries, true, 5, "Periodo", true, "verGraficaCta.aspx", 0, "{point.y:.2f}%", "Porcentaje");
 
             Page.ClientScript.RegisterStartupScript(this.GetType(), "plotScript_" + p.Consecutivo, p.JavaScript, false);
