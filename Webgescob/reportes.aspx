@@ -34,7 +34,7 @@
                                     <li><i class="fa fa-times"></i>Texto</li>
                                     <li><i class="fa fa-times"></i>Texto</li>
                                 </ul>
-                                <a runat="server" href="~/reportes.aspx" class="btn btn-default buy-now">Grafica</a>
+                                <a runat="server" href="~/graficas.aspx" class="btn btn-default buy-now">Grafica</a>
                             </div>
                         </div>
 
