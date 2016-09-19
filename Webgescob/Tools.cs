@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Text;
 using System.Data;
 using System.Data.Odbc;
-using System.Data.OracleClient;
 using System.IO;
 using DataLib;
 
