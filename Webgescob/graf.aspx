@@ -17,8 +17,6 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <!-- Font Awesome Icon stylesheet -->
     <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    <!-- Owl Carousel stylesheet -->
-    <link href="css/owl.carousel.css" rel="stylesheet" />
     <!-- Pretty Photo stylesheet -->
     <link href="css/prettyPhoto.css" rel="stylesheet" />
     <!-- Custom stylesheet -->
@@ -134,8 +132,6 @@
         <script src="js/modernizr-latest.js"></script>
         <!-- Bootstrap 3.2.0 js -->
         <script src="js/bootstrap.min.js"></script>
-        <!-- Owl Carousel plugin -->
-        <script src="js/owl.carousel.min.js"></script>
         <!-- ScrollTo js -->
         <script src="js/jquery.scrollto.min.js"></script>
         <!-- LocalScroll js -->

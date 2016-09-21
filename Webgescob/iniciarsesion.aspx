@@ -63,7 +63,7 @@
                             <div id="loginform" class="form-horizontal" role="form">
                                 <div style="margin-bottom: 25px" class="input-group">
                                     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                    <asp:TextBox runat="server" ID="usuario" CssClass="form-control" Height="60px" placeholder="Email"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="usuario" TextMode="Email" CausesValidation="True" CssClass="form-control" Height="60px" placeholder="Email"></asp:TextBox>
                                 </div>
                                 <div style="margin-bottom: 25px" class="input-group">
                                     <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
@@ -132,7 +132,7 @@
                                     <label for="email" class="col-md-3 control-label">
                                         Email</label>
                                     <div class="col-md-9">
-                                        <asp:TextBox runat="server" ID="txtemail" CssClass="form-control"></asp:TextBox>
+                                        <asp:TextBox runat="server" ID="txtemail" TextMode="Email" CausesValidation="True" CssClass="form-control"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="form-group">

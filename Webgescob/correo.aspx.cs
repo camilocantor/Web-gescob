@@ -99,7 +99,6 @@ namespace WebNif
             else
                 Label_adj.Text = "Seleccione el archivo que desea adjuntar";
 
-
             // Crear el archivo adjunto para el mensaje 
             Attachment adj = new Attachment(MapPath("~/adjuntos/" + sNom));
             mmsg.Attachments.Add(adj);

@@ -1,43 +1,30 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="historial_gestiones.aspx.cs" Inherits="WebNif.historial_gestiones" %>
+﻿<%@ Page Title="Historial de gestiones" Language="C#" AutoEventWireup="true" CodeBehind="historial_gestiones.aspx.cs" Inherits="WebNif.historial_gestiones" %>
 
 <%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- Template Title -->
-        <title>historial gestiones</title>
+<head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
         <!-- Bootstrap 3.2.0 stylesheet -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap.min.css" rel="stylesheet" />
         <!-- Font Awesome Icon stylesheet -->
         <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-        <!-- Owl Carousel stylesheet -->
-        <link href="css/owl.carousel.css" rel="stylesheet">
         <!-- Pretty Photo stylesheet -->
-        <link href="css/prettyPhoto.css" rel="stylesheet">
+        <link href="css/prettyPhoto.css" rel="stylesheet" />
         <!-- Custom stylesheet -->
         <link href="css/style.css" rel="stylesheet" type="text/css" />
         <link href="css/white.css" rel="stylesheet" type="text/css" />
         <!-- Custom Responsive stylesheet -->
-        <link href="css/responsive.css" rel="stylesheet">
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    </head>
+        <link href="css/responsive.css" rel="stylesheet" />     
 </head>
 <body>
     <form id="form1" runat="server">
 
-        <section id="hist_gestiones">
             <div class="features section-padding">
                 <div class="container">
                     <div class="header">
@@ -99,7 +86,6 @@
                     </div>
                 </div>
             </div>
-        </section>
 
         <div>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

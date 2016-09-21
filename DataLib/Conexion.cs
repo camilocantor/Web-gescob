@@ -119,33 +119,33 @@ namespace DataLib
             return mstrConnectionStringORACLE;
         }
 
-        public bool Queryt(string strSQL)
-        {
-            if (cnConexionT == null)
-                cnConexionT = new OracleConnection(mstrConnectionStringORACLE);
+        //public bool Queryt(string strSQL)
+        //{
+        //    if (cnConexionT == null)
+        //        cnConexionT = new OracleConnection(mstrConnectionStringORACLE);
 
-            ConnectionState state = cnConexionT.State;
-            if (state == ConnectionState.Closed)
-            {
-                cnConexionT.Open();
-                transaction = cnConexionT.BeginTransaction(IsolationLevel.ReadCommitted);
-            }
+        //    ConnectionState state = cnConexionT.State;
+        //    if (state == ConnectionState.Closed)
+        //    {
+        //        cnConexionT.Open();
+        //        transaction = cnConexionT.BeginTransaction(IsolationLevel.ReadCommitted);
+        //    }
 
-            try
-            {
-                OracleCommand cmComando = new OracleCommand(strSQL, cnConexionT);
-                cmComando.Transaction = transaction;
-                cmComando.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                Rollback();
-                throw ex;
-                return false;
-            }
+        //    try
+        //    {
+        //        OracleCommand cmComando = new OracleCommand(strSQL, cnConexionT);
+        //        cmComando.Transaction = transaction;
+        //        cmComando.ExecuteNonQuery();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Rollback();
+        //        throw ex;
+        //        return false;
+        //    }
 
-            return (true);
-        }
+        //    return (true);
+        //}
 
         public void Commit()
         {
@@ -381,149 +381,149 @@ namespace DataLib
             return query;
         }
 
-        public object Queryt(string strSQL, TipoDato eTipoDato)
-        {
-            object query = new object();
-            DataSet dtsTemp = new DataSet();
-            DataTable dttTemp = new DataTable();
-            DataView dtvTemp = new DataView();
+        //public object Queryt(string strSQL, TipoDato eTipoDato)
+        //{
+        //    object query = new object();
+        //    DataSet dtsTemp = new DataSet();
+        //    DataTable dttTemp = new DataTable();
+        //    DataView dtvTemp = new DataView();
 
-            switch (motorBD)
-            {
-                case "SqlServer":
-                    SqlConnection cnConexionSQL = new SqlConnection(mstrConnectionStringMSSQL);
-                    SqlCommand cmComandoSQL = new SqlCommand(strSQL, cnConexionSQL);
-                    SqlDataAdapter dtaAdaptadorSQL = new SqlDataAdapter();
-                    SqlDataReader dtrTempSQL;
+        //    switch (motorBD)
+        //    {
+        //        case "SqlServer":
+        //            SqlConnection cnConexionSQL = new SqlConnection(mstrConnectionStringMSSQL);
+        //            SqlCommand cmComandoSQL = new SqlCommand(strSQL, cnConexionSQL);
+        //            SqlDataAdapter dtaAdaptadorSQL = new SqlDataAdapter();
+        //            SqlDataReader dtrTempSQL;
 
-                    cnConexionSQL.Open();
-                    cmComandoSQL.CommandType = CommandType.Text;
-                    dtaAdaptadorSQL.SelectCommand = cmComandoSQL;
+        //            cnConexionSQL.Open();
+        //            cmComandoSQL.CommandType = CommandType.Text;
+        //            dtaAdaptadorSQL.SelectCommand = cmComandoSQL;
 
-                    switch (eTipoDato)
-                    {
-                        case TipoDato.DataSet:
-                            dtaAdaptadorSQL.Fill(dtsTemp, "Temp");
-                            query = dtsTemp;
-                            break;
-                        case TipoDato.Table:
-                            dtaAdaptadorSQL.Fill(dttTemp);
-                            query = dttTemp;
-                            break;
-                        case TipoDato.View:
-                            dtaAdaptadorSQL.Fill(dttTemp);
-                            dttTemp.TableName = "Temp";
-                            dtvTemp.Table = dttTemp;
-                            query = dtvTemp;
-                            break;
-                        case TipoDato.RecordSet:
-                            dtrTempSQL = cmComandoSQL.ExecuteReader();
-                            query = dtrTempSQL;
-                            break;
-                    }
+        //            switch (eTipoDato)
+        //            {
+        //                case TipoDato.DataSet:
+        //                    dtaAdaptadorSQL.Fill(dtsTemp, "Temp");
+        //                    query = dtsTemp;
+        //                    break;
+        //                case TipoDato.Table:
+        //                    dtaAdaptadorSQL.Fill(dttTemp);
+        //                    query = dttTemp;
+        //                    break;
+        //                case TipoDato.View:
+        //                    dtaAdaptadorSQL.Fill(dttTemp);
+        //                    dttTemp.TableName = "Temp";
+        //                    dtvTemp.Table = dttTemp;
+        //                    query = dtvTemp;
+        //                    break;
+        //                case TipoDato.RecordSet:
+        //                    dtrTempSQL = cmComandoSQL.ExecuteReader();
+        //                    query = dtrTempSQL;
+        //                    break;
+        //            }
 
-                    cnConexionSQL.Close();
-                    cnConexionSQL.Dispose();
-                    cmComandoSQL.Dispose();
-                    dtaAdaptadorSQL.Dispose();
-                    dtrTempSQL = null;
-                    break;
+        //            cnConexionSQL.Close();
+        //            cnConexionSQL.Dispose();
+        //            cmComandoSQL.Dispose();
+        //            dtaAdaptadorSQL.Dispose();
+        //            dtrTempSQL = null;
+        //            break;
 
-                case "Oracle":
+        //        case "Oracle":
 
-                    OracleCommand cmComandoORA = new OracleCommand(strSQL, cnConexionT);
-                    OracleDataAdapter dtaAdaptadorORA = new OracleDataAdapter();
-                    OracleDataReader dtrTempORA;
+        //            OracleCommand cmComandoORA = new OracleCommand(strSQL, cnConexionT);
+        //            OracleDataAdapter dtaAdaptadorORA = new OracleDataAdapter();
+        //            OracleDataReader dtrTempORA;
                     
 
-                    try
-                    {
-                        OracleGlobalization SessionGlob = cnConexionT.GetSessionInfo();
-                        SessionGlob.NumericCharacters = ",.";
-                        SessionGlob.DateFormat = "dd/mm/yyyy";
-                        cnConexionT.SetSessionInfo(SessionGlob);
+        //            try
+        //            {
+        //                OracleGlobalization SessionGlob = cnConexionT.GetSessionInfo();
+        //                SessionGlob.NumericCharacters = ",.";
+        //                SessionGlob.DateFormat = "dd/mm/yyyy";
+        //                cnConexionT.SetSessionInfo(SessionGlob);
 
-                        cmComandoORA.CommandType = CommandType.Text;
-                        dtaAdaptadorORA.SelectCommand = cmComandoORA;
+        //                cmComandoORA.CommandType = CommandType.Text;
+        //                dtaAdaptadorORA.SelectCommand = cmComandoORA;
 
-                        switch (eTipoDato)
-                        {
-                            case TipoDato.DataSet:
-                                dtaAdaptadorORA.Fill(dtsTemp, "Temp");
-                                query = dtsTemp;
-                                break;
-                            case TipoDato.Table:
-                                dtaAdaptadorORA.Fill(dttTemp);
-                                query = dttTemp;
-                                break;
-                            case TipoDato.View:
-                                dtaAdaptadorORA.Fill(dttTemp);
-                                dttTemp.TableName = "Temp";
-                                dtvTemp.Table = dttTemp;
-                                query = dtvTemp;
-                                break;
-                            case TipoDato.RecordSet:
-                                dtrTempORA = cmComandoORA.ExecuteReader();
-                                query = dtrTempORA;
-                                break;
-                        }
+        //                switch (eTipoDato)
+        //                {
+        //                    case TipoDato.DataSet:
+        //                        dtaAdaptadorORA.Fill(dtsTemp, "Temp");
+        //                        query = dtsTemp;
+        //                        break;
+        //                    case TipoDato.Table:
+        //                        dtaAdaptadorORA.Fill(dttTemp);
+        //                        query = dttTemp;
+        //                        break;
+        //                    case TipoDato.View:
+        //                        dtaAdaptadorORA.Fill(dttTemp);
+        //                        dttTemp.TableName = "Temp";
+        //                        dtvTemp.Table = dttTemp;
+        //                        query = dtvTemp;
+        //                        break;
+        //                    case TipoDato.RecordSet:
+        //                        dtrTempORA = cmComandoORA.ExecuteReader();
+        //                        query = dtrTempORA;
+        //                        break;
+        //                }
 
-                        cmComandoORA.Dispose();
-                        dtaAdaptadorORA.Dispose();
-                        dtrTempORA = null;
-                        break;
-                    }
-                    catch (Exception ex)
-                    {
-                        transaction.Rollback();
-                        throw;
-                    }
-                case "ODBC":
-                    OdbcConnection cnConexionOdbc = new OdbcConnection(mstrConnectionStringODBC);
-                    OdbcCommand cmComandoOdbc = new OdbcCommand(strSQL, cnConexionOdbc);
-                    OdbcDataAdapter dtaAdaptadorOdbc = new OdbcDataAdapter();
-                    OdbcDataReader dtrTempOdbc;
+        //                cmComandoORA.Dispose();
+        //                dtaAdaptadorORA.Dispose();
+        //                dtrTempORA = null;
+        //                break;
+        //            }
+        //            catch (Exception ex)
+        //            {
+        //                transaction.Rollback();
+        //                throw;
+        //            }
+        //        case "ODBC":
+        //            OdbcConnection cnConexionOdbc = new OdbcConnection(mstrConnectionStringODBC);
+        //            OdbcCommand cmComandoOdbc = new OdbcCommand(strSQL, cnConexionOdbc);
+        //            OdbcDataAdapter dtaAdaptadorOdbc = new OdbcDataAdapter();
+        //            OdbcDataReader dtrTempOdbc;
 
-                    cnConexionOdbc.Open();
+        //            cnConexionOdbc.Open();
 
-                    cmComandoOdbc.CommandType = CommandType.Text;
-                    dtaAdaptadorOdbc.SelectCommand = cmComandoOdbc;
+        //            cmComandoOdbc.CommandType = CommandType.Text;
+        //            dtaAdaptadorOdbc.SelectCommand = cmComandoOdbc;
 
-                    switch (eTipoDato)
-                    {
-                        case TipoDato.DataSet:
-                            dtaAdaptadorOdbc.Fill(dtsTemp, "Temp");
-                            query = dtsTemp;
-                            break;
-                        case TipoDato.Table:
-                            dtaAdaptadorOdbc.Fill(dttTemp);
-                            query = dttTemp;
-                            break;
-                        case TipoDato.View:
-                            dtaAdaptadorOdbc.Fill(dttTemp);
-                            dttTemp.TableName = "Temp";
-                            dtvTemp.Table = dttTemp;
-                            query = dtvTemp;
-                            break;
-                        case TipoDato.RecordSet:
-                            dtrTempOdbc = cmComandoOdbc.ExecuteReader();
-                            query = dtrTempOdbc;
-                            break;
-                    }
+        //            switch (eTipoDato)
+        //            {
+        //                case TipoDato.DataSet:
+        //                    dtaAdaptadorOdbc.Fill(dtsTemp, "Temp");
+        //                    query = dtsTemp;
+        //                    break;
+        //                case TipoDato.Table:
+        //                    dtaAdaptadorOdbc.Fill(dttTemp);
+        //                    query = dttTemp;
+        //                    break;
+        //                case TipoDato.View:
+        //                    dtaAdaptadorOdbc.Fill(dttTemp);
+        //                    dttTemp.TableName = "Temp";
+        //                    dtvTemp.Table = dttTemp;
+        //                    query = dtvTemp;
+        //                    break;
+        //                case TipoDato.RecordSet:
+        //                    dtrTempOdbc = cmComandoOdbc.ExecuteReader();
+        //                    query = dtrTempOdbc;
+        //                    break;
+        //            }
 
-                    cnConexionOdbc.Close();
-                    cnConexionOdbc.Dispose();
-                    cmComandoOdbc.Dispose();
-                    dtaAdaptadorOdbc.Dispose();
-                    dtrTempORA = null;
-                    break;
-            }
+        //            cnConexionOdbc.Close();
+        //            cnConexionOdbc.Dispose();
+        //            cmComandoOdbc.Dispose();
+        //            dtaAdaptadorOdbc.Dispose();
+        //            dtrTempORA = null;
+        //            break;
+        //    }
 
-            dtsTemp.Dispose();
-            dttTemp.Dispose();
-            dtvTemp.Dispose();
-            return query;
-        }
+        //    dtsTemp.Dispose();
+        //    dttTemp.Dispose();
+        //    dtvTemp.Dispose();
+        //    return query;
+        //}
 
         public object Query(string strSQL, TipoDato eTipoDato, OdbcCommand cmComandoOdbc)
         {

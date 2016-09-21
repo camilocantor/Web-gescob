@@ -46,11 +46,6 @@
 
                         <div class="navbar-collapse collapse">
                             <ul class="nav navbar-nav" style="border-bottom-color: black">
-<%--                                <li><a runat="server" href="~/inicio.aspx">Inicio</a></li>
-                                <li><a runat="server" href="~/cuentasxcobrar.aspx">Cuentas por Cobrar</a></li>
-                                <li><a runat="server" href="~/clientes.aspx">Clientes</a></li>
-                                <li><a runat="server" href="~/gestiones.aspx">Gestiones</a></li>
-                                <li><a runat="server" href="~/reportes.aspx">Reportes</a></li>--%>
                             </ul>
 
                             <ul class="nav navbar-nav navbar-right">
@@ -67,41 +62,39 @@
 
 
         <!-- ====== Screenshots Section ====== -->
-        <section id="screenshots">
-            <div class="screenshots section-padding dark-bg">
-                <div class="container">
-                    <div class="header">
-                        <h1><strong>gescob</strong></h1>
-                        <p>Software que permite la <strong>gestión de cobros</strong> de su empresa</p>
-                        <div class="underline"><i class="fa fa-image"></i></div>
-                    </div>
-
-                    <div class="owl-carousel owl-theme">
-                        <div class="item">
-                            <a href="images/im1.png" data-rel="prettyPhoto">
-                                <img src="images/im1.png" alt="gescob"></a>
-                        </div>
-                        <div class="item">
-                            <a href="images/im2.png" data-rel="prettyPhoto">
-                                <img src="images/im2.png" alt="cuentas por cobrar"></a>
-                        </div>
-                        <div class="item">
-                            <a href="images/im3.png" data-rel="prettyPhoto">
-                                <img src="images/im3.png" alt="clientes"></a>
-                        </div>
-                        <div class="item">
-                            <a href="images/im4.png" data-rel="prettyPhoto">
-                                <img src="images/im4.png" alt="gestiones"></a>
-                        </div>
-                        <div class="item">
-                            <a href="images/im5.png" data-rel="prettyPhoto">
-                                <img src="images/im5.png" alt="ingresar gestion"></a>
-                        </div>
-                    </div>
-
+        <div class="screenshots section-padding dark-bg">
+            <div class="container">
+                <div class="header">
+                    <h1><strong>gescob</strong></h1>
+                    <p>Software que permite la <strong>gestión de cobros</strong> de su empresa</p>
+                    <div class="underline"><i class="fa fa-image"></i></div>
                 </div>
+
+                <div class="owl-carousel owl-theme">
+                    <div class="item">
+                        <a href="images/im1.png" data-rel="prettyPhoto">
+                            <img src="images/im1.png" alt="gescob"></a>
+                    </div>
+                    <div class="item">
+                        <a href="images/im2.png" data-rel="prettyPhoto">
+                            <img src="images/im2.png" alt="cuentas por cobrar"></a>
+                    </div>
+                    <div class="item">
+                        <a href="images/im3.png" data-rel="prettyPhoto">
+                            <img src="images/im3.png" alt="clientes"></a>
+                    </div>
+                    <div class="item">
+                        <a href="images/im4.png" data-rel="prettyPhoto">
+                            <img src="images/im4.png" alt="gestiones"></a>
+                    </div>
+                    <div class="item">
+                        <a href="images/im5.png" data-rel="prettyPhoto">
+                            <img src="images/im5.png" alt="ingresar gestion"></a>
+                    </div>
+                </div>
+
             </div>
-        </section>
+        </div>
         <!-- ====== End Screenshots Section ====== -->
 
 
@@ -110,42 +103,40 @@
 
 
         <!-- ====== Copyright Section ====== -->
-        <section class="copyright dark-bg">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3 col-sm-4 col-md-push-3 animated wow fadeInLeft" data-wow-delay="0.2s">
-                        <h3 class="fh5co-lead">About</h3>
-                        <ul>
-                            <li><a href="#">Texto</a></li>
-                            <li><a href="#">Texto</a></li>
-                            <li><a href="#">Texto</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-3 col-sm-4 col-md-push-3 animated wow fadeInLeft" data-wow-delay="0.4s">
-                        <h3 class="fh5co-lead">Support</h3>
-                        <ul>
-                            <li><a href="#">Texto</a></li>
-                            <li><a href="#">Texto</a></li>
-                            <li><a href="#">Texto</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-3 col-sm-4 col-md-push-3 animated wow fadeInLeft" data-wow-delay="0.6s">
-                        <h3 class="fh5co-lead">More Links</h3>
-                        <ul>
-                            <li><a href="#">Texto</a></li>
-                            <li><a href="#">Texto</a></li>
-                            <li><a href="#">Texto</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-md-3 col-sm-12 col-md-pull-9 animated wow fadeInLeft" data-wow-delay="0.8s">
-                        <div class="fh5co-footer-logo"><a href="index.html">gescob</a></div>
-                        <p class="fh5co-copyright"><small>&copy; 2016. All Rights Reserved. </small></p>
-                    </div>
-
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-4 col-md-push-3 animated wow fadeInLeft" data-wow-delay="0.2s">
+                    <h3 class="fh5co-lead">About</h3>
+                    <ul>
+                        <li><a href="#">Texto</a></li>
+                        <li><a href="#">Texto</a></li>
+                        <li><a href="#">Texto</a></li>
+                    </ul>
                 </div>
+                <div class="col-md-3 col-sm-4 col-md-push-3 animated wow fadeInLeft" data-wow-delay="0.4s">
+                    <h3 class="fh5co-lead">Support</h3>
+                    <ul>
+                        <li><a href="#">Texto</a></li>
+                        <li><a href="#">Texto</a></li>
+                        <li><a href="#">Texto</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-sm-4 col-md-push-3 animated wow fadeInLeft" data-wow-delay="0.6s">
+                    <h3 class="fh5co-lead">More Links</h3>
+                    <ul>
+                        <li><a href="#">Texto</a></li>
+                        <li><a href="#">Texto</a></li>
+                        <li><a href="#">Texto</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3 col-sm-12 col-md-pull-9 animated wow fadeInLeft" data-wow-delay="0.8s">
+                    <div class="fh5co-footer-logo"><a href="index.html">gescob</a></div>
+                    <p class="fh5co-copyright"><small>&copy; 2016. All Rights Reserved. </small></p>
+                </div>
+
             </div>
-        </section>
+        </div>
 
         <!-- jQuery -->
         <script src="http://code.jquery.com/jquery.min.js"></script>
