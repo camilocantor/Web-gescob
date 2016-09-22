@@ -141,7 +141,7 @@ namespace BussinesLayer
             javaScript += "opposite: true,";
             javaScript += "allowDecimals: false,";
             javaScript += "min: 0,";
-            javaScript += "title: {text: '" + leyenda_y + "'}";
+            javaScript += "title: {text: '" + leyenda_y + "'}"; 
             javaScript += " },";
             javaScript += " tooltip: { valueSuffix: ' Millones de Pesos' },";
             javaScript += " credits: {  enabled: false },";
