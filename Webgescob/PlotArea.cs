@@ -28,18 +28,14 @@ namespace BussinesLayer
             set { javaScript = value; }
         }
 
-        public PlotArea(int tpograf, int cnsctvo, string title, string fuente, string regional, int ano_ini, List<List<PeriodosReporte>> listaSeries, bool useTimeSeries, int idEscenario, string tooltip, bool solomes, string url, int tipoGrafico, string SYMBOLO , string leyenda_y)
+        public PlotArea(int tpograf, int cnsctvo, string subtitulo, string titulo, int ano_ini, List<List<PeriodosReporte>> listaSeries, bool useTimeSeries, int idEscenario, string tooltip, bool solomes, string url, int tipoGrafico, string SYMBOLO , string leyenda_y)
         {
-            string xAxis = "";
-
-            if (regional == null)
-                regional = fuente;
-
             string nombreSerie1="";
-
             string data_serie1 = "";
             int cont = 0;
 
+            #region x axis --> Ene - Sep
+            string xAxis = "";
             foreach (List<PeriodosReporte> lsta_p in listaSeries)
             {
                 foreach (PeriodosReporte p in lsta_p)
@@ -57,15 +53,13 @@ namespace BussinesLayer
 
                     if (cont == 0)
                     {
-                        if (solomes)
-                            xAxis += "'" + p.getTituloCorto2() + "'";
-                        else
-                            xAxis += "'" + p.getTituloCorto() + "'";
+                        xAxis += "'" + p.getTituloCorto() + "'";
                     }
                     nombreSerie1 = p.NombreSerie;
                 }
                 cont++;
             }
+            #endregion
 
             char c = '"';
 
@@ -110,10 +104,10 @@ namespace BussinesLayer
             javaScript += "            }";
             javaScript += "       },";
             javaScript += "       title: {";
-            javaScript += "            text: 'ELECTRIFICADORA DEL HUILA S.A E.S.P'";
+            javaScript += "            text: '"+ titulo +"'";
             javaScript += "        },";
             javaScript += "       subtitle: {";
-            javaScript += "            text: 'Indicadores Financieros'";
+            javaScript += "            text: '" + subtitulo +"'";
             javaScript += "        },";
             javaScript += "       tooltip: {";
             javaScript += "            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'";
