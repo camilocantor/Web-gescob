@@ -6,7 +6,7 @@ namespace BussinesLayer
 {
     public class PlotArea
     {
-        string javaScript = "";
+        string javaScript = ""; 
         string div;
         int consecutivo;
 
