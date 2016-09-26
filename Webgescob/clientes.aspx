@@ -14,7 +14,7 @@
                 </div>
 
                 <div class="meta-text">
-                    <h3>ID Cliente: 
+                    <h3>ID Cliente:  
                                  <asp:TextBox ID="TextBox1" runat="server" Width="180px"></asp:TextBox>
                         <asp:Button ID="Button1" runat="server" Text="Buscar" OnClick="cliente" BackColor="White" Width="180px" />
                     </h3>
